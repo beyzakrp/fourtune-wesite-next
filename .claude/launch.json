@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "meridian-dev",
+      "runtimeExecutable": "C:\\node-runtime-24.19.0\\node.exe",
+      "runtimeArgs": ["node_modules/next/dist/bin/next", "dev", "--port", "3200"],
+      "port": 3200
+    }
+  ]
+}

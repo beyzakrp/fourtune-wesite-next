@@ -1,26 +1,1043 @@
 @import "tailwindcss";
 
+/* Theme is driven by data-theme on <html>, set before paint by the inline
+   script in the root layout. `dark:` follows that attribute, not the OS query,
+   so the manual toggle and the system preference agree. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ---------------------------------------------------------------------------
+   Brand palette — verbatim from the Fourtune brand board.
+   Everything below is derived from these five; do not re-pick them per
+   component. Mirrored in `src/lib/site.ts` as `brandColors`.
+--------------------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-pink: #f52e63; /* Fortune Pink */
+  --brand-blush: #fbe2dc; /* Soft Blush   */
+  --brand-ivory: #f7f4ef; /* Warm Ivory   */
+  --brand-ink: #000000; /* Midnight Ink */
+  --brand-blue: #0088ff; /* Fusion Blue  */
+  --brand-gradient: linear-gradient(90deg, var(--brand-blush) 0%, var(--brand-pink) 100%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ---------------------------------------------------------------------------
+   Tokens — light. Warm Ivory ground, Midnight Ink text, Fortune Pink accent.
+
+   Fortune Pink is a *graphic* colour: white on it measures 3.85:1, which is
+   below AA for body-sized text. So there are three accent tokens, not one —
+   `--accent` for large type and marks, `--accent-ink` for small text and
+   links, `--accent-solid` for filled controls. Each one passes where it is
+   used, and the brand pink is still the colour you see.
+--------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+
+  /* The page is white and the dark sections are *bands* laid on it — that
+     inversion is the whole editorial frame, so `--bg` is pure white and the
+     warm ivory drops down to `--surface`. */
+  --bg: #ffffff;
+  --bg-elevated: #ffffff;
+  --surface: #f4f4f4;
+  --surface-2: #e8e8e8;
+  --line: rgb(0 0 0 / 0.12);
+  --line-strong: rgb(0 0 0 / 0.3);
+
+  /* Bands stay dark in both themes — they are a material, not a theme value. */
+  --band: #000000;
+  --band-fg: #ffffff;
+  --band-line: rgb(255 255 255 / 0.15);
+
+  --fg: #000000;
+  --fg-secondary: #3d3d3d;
+  --fg-muted: #6e6e6e;
+  --fg-onaccent: #ffffff;
+
+  --accent: var(--brand-pink);
+  --accent-ink: #c4174b; /* 5.4:1 on ivory */
+  --accent-solid: #e11e55; /* 4.6:1 with white */
+  --accent-hover: #c81b4c;
+  --accent-soft: rgb(245 46 99 / 0.1);
+  --info: var(--brand-blue);
+  /* Oversized display type that reads as texture rather than as a headline. */
+  --ghost: #e4e4e4;
+
+  /* Translucent chrome. Weight encodes hierarchy — thick for structure,
+     thin for controls floating over content. */
+  --material-thick: rgb(255 255 255 / 0.82);
+  --material-regular: rgb(255 255 255 / 0.68);
+  --material-thin: rgb(255 255 255 / 0.5);
+  --material-edge: rgb(255 255 255 / 0.7);
+  --material-blur: 14px;
+  --material-saturate: 180%;
+
+  --scrim: rgb(0 0 0 / 0.4);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.05), 0 4px 12px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 2px 6px rgb(0 0 0 / 0.06), 0 24px 60px rgb(0 0 0 / 0.12);
+
+  /* Baseline's radius set: a small tile radius, a card radius, and one large
+     radius shared by every full-width band. */
+  --radius-sm: 0.75rem;
+  --radius: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-xl: 2rem;
+  --radius-pill: 62.5rem;
+
+  /* Reversible transitions mirror these two curves. */
+  --ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-in: cubic-bezier(1, 0, 0.68, 0.28);
+
+  /* Floating header metrics. `--header-h` is the *total* vertical space the
+     header occupies (top offset + pill), so every page's top padding stays a
+     single calc against one token. */
+  /* Total vertical space the transparent header occupies, so anchor scrolling
+     and any page that does not open with a tall band can clear it. */
+  --header-h: 5rem;
+
+  /* Glass, not frost.
+     The two read very differently and the difference is mostly *blur*: heavy
+     blur turns a surface milky and hides whatever is behind it, which is
+     frosted glass. Clear glass blurs a little, boosts the colour coming
+     through, and announces itself with a bright rim rather than with opacity.
+     So: blur down, saturation up, tint down, edges up. */
+  --glass-bg: rgb(255 255 255 / 0.3);
+  --glass-bg-scrolled: rgb(255 255 255 / 0.55);
+  /* The sheet is the biggest surface, so it is still the heaviest of the
+     three — but the scrim underneath does the legibility work, which leaves
+     the panel free to read as glass. */
+  --glass-sheet: rgb(255 255 255 / 0.55);
+  /* A crisp bright rim is the strongest single cue that a surface is glass. */
+  --glass-border: rgb(255 255 255 / 0.85);
+  --glass-highlight: rgb(255 255 255 / 0.75);
+  --glass-sheen: rgb(255 255 255 / 0.2);
+  --glass-shadow: 0 8px 32px rgb(0 0 0 / 0.12);
+  --glass-shadow-scrolled: 0 10px 40px rgb(0 0 0 / 0.18);
+  /* Just enough blur to separate the surface from what is behind it, and no
+     more. Past roughly 14px the backdrop stops being recognisable and the
+     panel reads as frosted. The saturation lift is what sells "clear": real
+     glass passes colour through slightly enriched, not washed out. */
+  --glass-blur: 12px;
+  --glass-saturate: 185%;
+  --glass-brightness: 1.06;
+  --glass-text-shadow: none;
+
+  /* Section gutter and the inset that frames every band against the page. */
+  --gutter: 1.5rem;
+  --page-inset: 0.5rem;
+
+  /* Widest the *content* is allowed to get. Deliberately in px, not rem: the
+     adaptive grid ties the root size to the viewport, so a rem cap would scale
+     with the screen and never actually cap anything — 84rem is the same
+     fraction of the window at every width. */
+  --content-max: 1440px;
+
+  /* Bands stay full-bleed; their contents sit in a centred column. `max()`
+     means the gutter wins on narrow screens and the centring wins on wide
+     ones, with no breakpoint and no wrapper element. */
+  --pad-x: max(var(--gutter), calc((100% - var(--content-max)) / 2));
+
+  /* Reading measure. Anything the eye tracks line to line gets capped here
+     regardless of how wide its container is. */
+  --measure: 68ch;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (min-width: 640px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --gutter: 2.5rem;
+    --page-inset: 0.75rem;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@media (min-width: 1024px) {
+  :root {
+    /* More air once there is room for it — the inset is what stops a band
+       from reading as a full-screen poster. */
+    --gutter: 4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 4.5rem;
+  }
+}
+
+/* Dark is Midnight Ink taken down to a true ground, with Warm Ivory type. */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #000000;
+  --bg-elevated: #0d0d0d;
+  --surface: #111111;
+  --surface-2: #1c1c1c;
+  /* On a black page a band cannot be darker than the ground, so it lifts
+     instead — same role, opposite direction. Kept close to black so the page
+     still reads as one continuous field rather than as stacked greys. */
+  --band: #101010;
+  --band-fg: #ffffff;
+  --band-line: rgb(255 255 255 / 0.15);
+  --line: rgb(255 255 255 / 0.14);
+  --line-strong: rgb(255 255 255 / 0.3);
+
+  --fg: #ffffff;
+  --fg-secondary: #c9c9c9;
+  --fg-muted: #8a8a8a;
+  --fg-onaccent: #ffffff;
+
+  --accent: var(--brand-pink); /* 4.9:1 on this ground */
+  --accent-ink: #ff6189; /* 6.6:1 on this ground */
+  --accent-solid: #e11e55;
+  --accent-hover: #ff4674;
+  --accent-soft: rgb(245 46 99 / 0.18);
+  --info: #47a6ff;
+  --ghost: #1f1f1f;
+
+  --material-thick: rgb(10 10 10 / 0.78);
+  --material-regular: rgb(10 10 10 / 0.62);
+  --material-thin: rgb(255 255 255 / 0.07);
+  --material-edge: rgb(255 255 255 / 0.1);
+
+  /* Same material, less of it: over a dark ground the white frost has to stay
+     thin or it turns to fog. The sheet is ink-tinted instead, because a light
+     translucent surface over dark content destroys legibility. */
+  --glass-bg: rgb(255 255 255 / 0.07);
+  --glass-bg-scrolled: rgb(255 255 255 / 0.13);
+  --glass-sheet: rgb(14 14 14 / 0.5);
+  /* On a dark ground the rim carries almost all of the "glass" read, so it is
+     proportionally brighter than in light theme. The brightness lift is what
+     stops thin white tint over black from just looking like grey haze. */
+  --glass-border: rgb(255 255 255 / 0.3);
+  --glass-brightness: 1.18;
+  --glass-highlight: rgb(255 255 255 / 0.3);
+  --glass-sheen: rgb(255 255 255 / 0.08);
+  --glass-shadow: 0 8px 32px rgb(0 0 0 / 0.32);
+  --glass-shadow-scrolled: 0 10px 40px rgb(0 0 0 / 0.48);
+  /* Stronger than it looks like it needs to be, and deliberately so: the tint
+     behind this text was halved to make the glass read as clear, so the job of
+     holding small labels apart from a busy photograph falls to the shadow. */
+  --glass-text-shadow: 0 1px 3px rgb(0 0 0 / 0.6);
+
+  --scrim: rgb(6 8 20 / 0.65);
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 12px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 2px 6px rgb(0 0 0 / 0.5), 0 24px 60px rgb(0 0 0 / 0.55);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-fg-secondary: var(--fg-secondary);
+  --color-fg-muted: var(--fg-muted);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-solid: var(--accent-solid);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-onaccent: var(--fg-onaccent);
+  --color-info: var(--info);
+  --color-blush: var(--brand-blush);
+  --color-ink: var(--brand-ink);
+  --color-band: var(--band);
+  --color-band-fg: var(--band-fg);
+  --color-ghost: var(--ghost);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --ease-out: var(--ease-out);
+  --ease-in: var(--ease-in);
+}
+
+/* Brand type: Metropolis for headlines, Elms Sans for body — the real faces,
+   self-hosted from `src/fonts/` and wired up in the locale layout.
+
+   Fonts use a plain `@theme`, not `@theme inline`: the inline form resolves
+   values into utilities without emitting the custom properties, so
+   `var(--font-sans)` in hand-written CSS would be undefined — and one
+   undefined var invalidates the whole font-family declaration.
+
+   `--font-metropolis` / `--font-elms` come from next/font and are set on
+   <html>, not <body>, so they are in scope for these `:root` declarations.
+   Moving them to <body> would silently drop both families to the fallback. */
+@theme {
+  --font-display: var(--font-metropolis), "Segoe UI Variable Display",
+    system-ui, sans-serif;
+  --font-sans: var(--font-elms), -apple-system, BlinkMacSystemFont,
+    "Segoe UI Variable Text", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+}
+
+@layer base {
+  * {
+    min-width: 0;
+  }
+
+  /* ---------------------------------------------------------------------
+     Adaptive rem grid. Every dimension in the site is authored in `rem`
+     against a 1920 design width, and the root size is recomputed from the
+     viewport so the whole layout stays proportional instead of reflowing.
+
+     Each step is `16 * 100 / baseWidth` expressed in vw, so 1rem lands back
+     on 16px at that step's design width. The last step drops to a 360 base,
+     which is why the root jumps *up* below 640: a phone is a separate design,
+     not a squeezed desktop. Above 1920 the JS in `AdaptiveRoot` scales up and
+     these rules stand down.
+  --------------------------------------------------------------------- */
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 1.5rem);
+  }
+
+  @media (max-width: 1920px) {
+    html { font-size: 0.833333vw; }
+  }
+  @media (max-width: 1440px) {
+    html { font-size: 1.111111vw; }
+  }
+  @media (max-width: 1024px) {
+    html { font-size: 1.5625vw; }
+  }
+  @media (max-width: 640px) {
+    html { font-size: 4.444444vw; }
+  }
+
+  /* Lenis drives scroll; native smooth would fight it. */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  html.lenis {
+    scroll-behavior: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 100%;
+    line-height: 1.5;
+    font-optical-sizing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+    /* Theme flips are eased, never abrupt. */
+    transition: background-color 400ms var(--ease-out), color 400ms var(--ease-out);
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--fg-onaccent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  img,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Type scale — tracking and leading are size-specific, never one value for all.
+   Large sizes get negative tracking and tight leading; body sits near 0.
+--------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------------------
+   Editorial type scale, optically corrected.
+
+   Sizes are fixed `rem` (plus two viewport-scaled display sizes) rather than
+   `clamp()` — the adaptive rem grid above already does the responsive work, so
+   clamping on top of it would fight it and flatten the proportions the grid
+   exists to preserve.
+
+   **Tracking is size-specific, and this is where the two systems disagree.**
+   The editorial reference sets one tracking value (-0.02em) at every size.
+   That is wrong at both ends: letters look too far apart as type grows, and
+   too crowded as it shrinks. So tracking tightens as the size climbs and goes
+   slightly *positive* at caption sizes, and leading moves inversely — tight on
+   display, open on body. Weight, size and leading are set as one gesture per
+   step rather than tuned independently.
+--------------------------------------------------------------------------- */
+@utility type-display {
+  font-family: var(--font-display);
+  /* Not the reference's 12.5vw: that assumes a three-word English headline on
+     one line. These headlines are Turkish sentences, so the size backs off and
+     the line is allowed to wrap. */
+  font-size: 8.5vw;
+  line-height: 0.86;
+  letter-spacing: -0.038em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-optical-sizing: auto;
+}
+
+@utility type-h1 {
+  font-family: var(--font-display);
+  font-size: 3.75rem;
+  line-height: 0.94;
+  letter-spacing: -0.028em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-optical-sizing: auto;
+}
+
+@utility type-h2 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 0.98;
+  letter-spacing: -0.022em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-optical-sizing: auto;
+}
+
+@utility type-h3 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  line-height: 1.35;
+  letter-spacing: -0.008em;
+  font-weight: 500;
+}
+
+@utility type-lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  letter-spacing: -0.004em;
+  font-weight: 400;
+}
+
+@utility type-body {
+  font-size: 0.875rem;
+  line-height: 1.68;
+  letter-spacing: 0;
+}
+
+/* Small text needs a touch of *positive* tracking to stay legible. */
+@utility type-caption {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  letter-spacing: 0.012em;
+}
+
+@utility type-eyebrow {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------------------------------
+   Materials — content scrolls *under* these, they never own a solid strip.
+--------------------------------------------------------------------------- */
+/* Never hand-write `-webkit-backdrop-filter` next to the standard property:
+   Lightning CSS (Tailwind v4's engine) collapses the pair and keeps only the
+   prefixed one, which leaves the frost off entirely. Write the standard
+   property alone and let the build add whatever prefixes its targets need. */
+@utility material-thick {
+  background: var(--material-thick);
+  backdrop-filter: blur(var(--material-blur)) saturate(var(--material-saturate));
+}
+
+@utility material-regular {
+  background: var(--material-regular);
+  backdrop-filter: blur(12px) saturate(var(--material-saturate));
+}
+
+@utility material-thin {
+  background: var(--material-thin);
+  backdrop-filter: blur(8px) saturate(var(--material-saturate));
+}
+
+/* A bright top edge reads as light catching a real surface. */
+@utility material-edge {
+  box-shadow: inset 0 1px 0 0 var(--material-edge);
+}
+
+/* Vibrancy: over a blurred surface, flat grey text loses legibility.
+   Heavier weight + a touch of tracking instead. */
+@utility vibrant-secondary {
+  color: var(--fg-secondary);
+  font-weight: 500;
+  letter-spacing: 0.004em;
+}
+
+/* Scroll edge effect: a soft fade where content meets floating chrome,
+   in place of a 1px divider. */
+@utility scroll-edge {
+  mask-image: linear-gradient(to bottom, transparent, #000 var(--header-h));
+}
+
+/* Sections run full-bleed inside their band and carry their own gutter — the
+   editorial frame comes from the page inset and the band radius, not from a
+   centred max-width column. */
+@utility container-page {
+  width: 100%;
+  padding-inline: var(--pad-x);
+}
+
+/* The same inset, for sections that set their own vertical padding. */
+@utility section-x {
+  padding-inline: var(--pad-x);
+}
+
+/* Text the eye reads line to line. Capped independently of the container,
+   because a 1200px-wide grid of cards is fine and a 1200px-wide paragraph is
+   not — the container fixes composition, this fixes legibility. */
+@utility measure {
+  max-width: var(--measure);
+}
+
+/* A dark full-width band laid on the white page. The page inset around
+   <main> is what turns its corners into a card edge. */
+@utility band {
+  border-radius: var(--radius-lg);
+  background: var(--band);
+  color: var(--band-fg);
+}
+
+/* The light counterpart — an off-white band for the alternating sections. */
+@utility band-soft {
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  color: var(--fg);
+}
+
+@utility hairline {
+  border-color: var(--line);
+}
+
+/* The brand gradient (Soft Blush → Fortune Pink) as a type wash. Display
+   sizes only — at body size the blush end drops below AA. */
+@utility text-brand-gradient {
+  background-image: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-brand-gradient {
+  background-image: var(--brand-gradient);
+}
+
+/* ---------------------------------------------------------------------------
+   Floating glass header.
+
+   Everything here is prefixed `sh-` and only ever applied inside
+   `components/site/header.tsx` and its mobile sheet, so no other component can
+   pick these rules up by accident. They live in the components layer so a
+   Tailwind utility on the same element still wins.
+--------------------------------------------------------------------------- */
+@layer components {
+  /* The header rides *inside* the opening band rather than floating over the
+     page: transparent, white, no chrome of its own. Every page opens with a
+     dark band, so white type is always on the right ground. Once scrolled past
+     that band the material fades in behind it and it becomes legible chrome. */
+  .sh-root {
+    position: fixed;
+    inset-inline: 0;
+    top: 0;
+    z-index: 60;
+    /* The header aligns to the same column as the content below it, so the
+       wordmark never sits at the screen edge while the page is inset. */
+    padding: 1.5rem var(--pad-x) 0;
+    color: var(--band-fg);
+  }
+
+  @media (min-width: 640px) {
+    .sh-root {
+      padding-top: 2rem;
+    }
+  }
+
+  /* Once the opening band has scrolled by, the header materialises as a
+     rounded glass panel floating on the page — not a full-bleed strip.
+     A hard-edged bar spanning the viewport fights every rounded band beneath
+     it and reads as a lid clamped over the page; a panel that shares the
+     content column's width and the card radius reads as another card in the
+     same system.
+
+     It lives on a pseudo-element with a negative inset so the material can be
+     larger than the row it backs without shifting the row: the wordmark stays
+     exactly on the content column line whether the glass is there or not. */
+  .sh-grid::before {
+    content: "";
+    position: absolute;
+    inset: -0.75rem -1.25rem;
+    border-radius: var(--radius-pill);
+    background-color: var(--glass-bg-scrolled);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate))
+      brightness(var(--glass-brightness));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+    opacity: 0;
+    transition: opacity 320ms var(--ease-out);
+    pointer-events: none;
+  }
+
+  .sh-root[data-scrolled="true"] .sh-grid::before {
+    opacity: 1;
+  }
+
+  /* A short wash off the top edge — light landing on a curved surface. */
+  .sh-grid::after {
+    content: "";
+    position: absolute;
+    inset: -0.75rem -1.25rem;
+    border-radius: var(--radius-pill);
+    background: linear-gradient(180deg, var(--glass-sheen) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 320ms var(--ease-out);
+    pointer-events: none;
+  }
+
+  .sh-root[data-scrolled="true"] .sh-grid::after {
+    opacity: 1;
+  }
+
+  /* The row itself has to sit above its own material. */
+  .sh-grid > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* The header's own context rules live *outside* every layer — see below. */
+
+  /* `1fr auto 1fr` puts the nav on the true centre line of the header — and
+     therefore of the viewport — no matter how much wider the right-hand
+     actions are than the wordmark. A flex row with three `flex-1` cells would
+     centre the nav inside the *leftover* space instead, which drifts as soon
+     as the two ends stop matching. */
+  .sh-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.75rem;
+  }
+
+  .sh-link {
+    display: block;
+    position: relative;
+    color: rgb(255 255 255 / 0.9);
+    transition: color 200ms var(--ease-out);
+  }
+
+  .sh-link:hover,
+  .sh-link[aria-current="page"] {
+    color: #fff;
+  }
+
+  /* State is carried by a rule under the label, not by colour alone. */
+  .sh-link[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.35rem;
+    height: 1px;
+    background: currentColor;
+  }
+
+  /* Icon and menu buttons. The 44px floor is the touch target, not the ink —
+     `--sh-ink` sizes the visible circle so the pill does not look chunky. */
+  .sh-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 999px;
+    color: var(--fg);
+    transition:
+      background-color 200ms var(--ease-out),
+      border-color 200ms var(--ease-out);
+  }
+
+  .sh-action:hover {
+    background-color: var(--glass-bg-scrolled);
+  }
+
+  /* The header pill's material, reusable as a floating chip. Same tokens, so
+     a change to the glass reads everywhere at once. */
+  .glass-panel {
+    position: relative;
+    background-color: var(--glass-bg-scrolled);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate))
+      brightness(var(--glass-brightness));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+    /* Vibrancy. These chips float over photography, where flat text loses its
+       edges against whatever happens to be behind it. */
+    text-shadow: var(--glass-text-shadow);
+  }
+
+  .glass-panel :is(p, span, a) {
+    letter-spacing: 0.004em;
+  }
+
+  .glass-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg, var(--glass-sheen) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .sh-sheet {
+    background-color: var(--glass-sheet);
+    backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate))
+      brightness(var(--glass-brightness));
+    border-top: 1px solid var(--glass-border);
+    box-shadow: 0 -8px 40px rgb(0 0 0 / 0.28), inset 0 1px 0 var(--glass-highlight);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Component styles that used to live in `style={{ … }}`.
+
+   Two kinds are collected here:
+
+   1. Fixed values that were only inline because it was convenient — sizes,
+      gradients, scrims. Those become plain classes.
+
+   2. Values that genuinely vary per item, like a project's own colour stops.
+      Those cannot be a static class, but the *recipe* still can: the class
+      owns the gradient, and the component passes only the data in through
+      three custom properties. The styling lives in CSS; the content stays in
+      the component, which is the split that was wrong before.
+--------------------------------------------------------------------------- */
+@layer components {
+  /* --- Hero ------------------------------------------------------------- */
+  /* Height is capped against the viewport *width* as well as its height.
+     On a tall narrow window a pure `100svh` band becomes strongly portrait,
+     and a wide photograph inside a portrait box gets cropped to a slice — the
+     "too close" effect. Bounding it by `80vw` keeps the band's proportions
+     within reach of the artwork's.
+
+     `min-height` is in px on purpose: in rem it would scale with the adaptive
+     grid and end up *taller* than the cap it is supposed to back-stop. */
+  .hero-band {
+    height: min(calc(100svh - var(--page-inset) * 2), 80vw);
+    min-height: 460px;
+  }
+
+  /* Seats the content. The bottom stop carries the lead and the buttons. */
+  .hero-scrim-v {
+    background: linear-gradient(
+      to bottom,
+      rgb(0 0 0 / 0.3) 0%,
+      rgb(0 0 0 / 0.12) 38%,
+      rgb(0 0 0 / 0.55) 72%,
+      rgb(0 0 0 / 0.85) 100%
+    );
+  }
+
+  /* Biases the darkness toward the left, where the copy is. */
+  .hero-scrim-h {
+    background: linear-gradient(
+      100deg,
+      rgb(0 0 0 / 0.5) 0%,
+      rgb(0 0 0 / 0.28) 42%,
+      rgb(0 0 0 / 0.06) 74%,
+      rgb(0 0 0 / 0) 100%
+    );
+  }
+
+  /* --- Palette mesh ----------------------------------------------------- */
+  /* Expects --c1, --c2 and --c3 on the element. */
+  .palette-ground {
+    background-color: var(--c3);
+  }
+
+  .palette-mesh {
+    background-image:
+      radial-gradient(80% 65% at 18% 22%, var(--c1) 0%, transparent 62%),
+      radial-gradient(70% 70% at 82% 30%, var(--c2) 0%, transparent 60%);
+  }
+
+  /* The cover carries a third stop that closes the bottom of the frame. */
+  .palette-mesh-deep {
+    background-image:
+      radial-gradient(80% 65% at 18% 22%, var(--c1) 0%, transparent 62%),
+      radial-gradient(70% 70% at 82% 30%, var(--c2) 0%, transparent 60%),
+      radial-gradient(90% 80% at 50% 108%, var(--c3) 0%, transparent 70%);
+  }
+
+  .palette-veil {
+    background-image: linear-gradient(to top, var(--c3) 0%, transparent 55%);
+  }
+
+  .cover-mark {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  /* --- Ghost heading ---------------------------------------------------- */
+  .ghost-title {
+    font-size: 8.2vw;
+    line-height: 1.02;
+    letter-spacing: -0.038em;
+  }
+
+  /* --- Aurora ----------------------------------------------------------- */
+  .aurora-blob {
+    background-image: radial-gradient(circle, var(--blob) 0%, transparent 68%);
+  }
+
+  .aurora-blob-soft {
+    background-image: radial-gradient(circle, var(--blob) 0%, transparent 70%);
+  }
+
+  /* --- Decorative section glows ----------------------------------------- */
+  .cta-glow {
+    background-image: radial-gradient(
+      70% 90% at 50% 0%,
+      var(--accent-soft) 0%,
+      transparent 70%
+    );
+  }
+
+  .lab-glow {
+    background-image:
+      radial-gradient(70% 90% at 15% 10%, var(--accent-soft) 0%, transparent 65%),
+      radial-gradient(60% 80% at 85% 90%, rgb(0 136 255 / 0.14) 0%, transparent 65%);
+  }
+
+  /* --- Small parts ------------------------------------------------------ */
+  .avatar-dot {
+    background-color: var(--dot);
+  }
+
+  .avatar-dot + .avatar-dot {
+    margin-left: -0.5rem;
+  }
+
+  .loader-wordmark {
+    font-size: min(2rem, 7vw);
+  }
+
+  /* The fill is state-driven, so the state is an attribute and the timing
+     lives here rather than being rebuilt as a string on every render. */
+  .loader-fill {
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 1280ms cubic-bezier(0.65, 0, 0.35, 1) 120ms;
+  }
+
+  .loader-fill[data-filling="true"] {
+    transform: scaleX(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loader-fill {
+      transition: none;
+    }
+  }
+
+  /* --- SplitWords ------------------------------------------------------- */
+  /* Separate from the `.w` reveal primitive: that one ships its own hidden
+     start state, and here Motion owns the transform. Same box, no initial
+     values, so the two do not fight over the same property. */
+  .sw-line {
+    display: inline;
+  }
+
+  .sw-word {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 0.12em;
+    margin-bottom: -0.12em;
+  }
+
+  .sw-inner {
+    display: inline-block;
+    will-change: transform;
+  }
+
+  .facility-cap-warm {
+    background-color: rgb(0 0 0 / 0.55);
+  }
+
+  .facility-cap-cool {
+    background-color: rgb(0 0 0 / 0.32);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Header context — deliberately UNLAYERED.
+
+   These rules have to beat Tailwind utilities sitting directly on the same
+   elements (`hidden`, `dark:block`, `border-line`, `bg-…`). Specificity cannot
+   do that on its own: cascade layers are resolved *before* specificity, and
+   `utilities` outranks `components`. Unlayered declarations outrank every
+   layer, which is exactly the escape hatch this needs — and it is why the
+   first attempt at these rules silently lost and hid the wordmark entirely.
+
+   What they encode: the header's foreground follows the surface *underneath*
+   it, not the active theme. At rest it lies on the opening band, which is dark
+   in both themes; once scrolled it lies on the page, which is not.
+--------------------------------------------------------------------------- */
+.sh-root:not([data-scrolled="true"]) .wm-ink {
+  display: none;
+}
+
+.sh-root:not([data-scrolled="true"]) .wm-light {
+  display: block;
+}
+
+/* Controls are authored for a page ground; on the band they need band colours. */
+.sh-controls :is(button, a) {
+  color: inherit;
+  border-color: rgb(255 255 255 / 0.28);
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.sh-controls :is(button, a):hover {
+  border-color: rgb(255 255 255 / 0.5);
+}
+
+.sh-controls [class~="bg-fg"] {
+  background-color: var(--band-fg);
+}
+
+.sh-controls [class~="text-bg"] {
+  color: var(--band);
+}
+
+.sh-root[data-scrolled="true"] {
+  color: var(--fg);
+}
+
+.sh-root[data-scrolled="true"] .sh-link {
+  color: var(--fg-secondary);
+}
+
+.sh-root[data-scrolled="true"] :is(.sh-link:hover, .sh-link[aria-current="page"]) {
+  color: var(--fg);
+}
+
+.sh-root[data-scrolled="true"] .sh-controls :is(button, a) {
+  border-color: var(--line);
+  background-color: transparent;
+}
+
+.sh-root[data-scrolled="true"] .sh-controls :is(button, a):hover {
+  border-color: var(--line-strong);
+}
+
+.sh-root[data-scrolled="true"] .sh-controls [class~="bg-fg"] {
+  background-color: var(--fg);
+}
+
+.sh-root[data-scrolled="true"] .sh-controls [class~="text-bg"] {
+  color: var(--bg);
+}
+
+.sh-root[data-scrolled="true"] .sh-burger {
+  background-color: var(--surface-2);
+}
+
+.sh-root[data-scrolled="true"] .sh-burger:hover {
+  background-color: var(--line);
+}
+
+/* ---------------------------------------------------------------------------
+   Accessibility preferences. Reduced motion is not "no feedback" — it is a
+   non-vestibular equivalent: cross-fades stay, travel and overshoot go.
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 150ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .motion-travel {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root,
+  [data-theme="dark"] {
+    --material-thick: var(--bg);
+    --material-regular: var(--bg);
+    --material-thin: var(--bg-elevated);
+    --material-blur: 0px;
+
+    /* The pill keeps its shape and hairline; it just stops being see-through. */
+    --glass-bg: var(--bg-elevated);
+    --glass-bg-scrolled: var(--bg-elevated);
+    --glass-sheet: var(--bg-elevated);
+    --glass-border: var(--line-strong);
+    --glass-sheen: transparent;
+    --glass-blur: 0px;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --fg-muted: #3b4470;
+    --fg-secondary: #212c5e;
+    --line: rgb(0 0 0 / 0.5);
+    --accent: var(--accent-ink);
+    --material-thick: var(--bg);
+    --material-regular: var(--bg);
+    --material-blur: 0px;
+  }
+
+  [data-theme="dark"] {
+    --fg-muted: #d5d8e6;
+    --fg-secondary: #f7f4ef;
+    --line: rgb(255 255 255 / 0.48);
+    --accent: var(--accent-ink);
+    --material-thick: var(--bg);
+    --material-regular: var(--bg);
+  }
+
+  :root,
+  [data-theme="dark"] {
+    --glass-bg: var(--bg-elevated);
+    --glass-bg-scrolled: var(--bg-elevated);
+    --glass-sheet: var(--bg-elevated);
+    --glass-border: var(--fg);
+    --glass-sheen: transparent;
+    --glass-blur: 0px;
+    --glass-text-shadow: none;
+  }
 }

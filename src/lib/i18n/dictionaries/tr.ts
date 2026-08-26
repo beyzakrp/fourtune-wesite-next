@@ -1,0 +1,485 @@
+﻿import type { Dictionary } from "./en";
+
+/** Turkish — the default locale. */
+const tr: Dictionary = {
+  meta: {
+    tagline: "Markalama ajansı",
+    title: "Fourtune — Markanın tonunu bul",
+    description:
+      "Fourtune bağımsız bir markalama ajansı: strateji, kimlik, ürün ve hepsini birbirine bağlayan hareket.",
+    ogAlt: "Fourtune — 4tune",
+  },
+
+  nav: {
+    home: "Ana sayfa",
+    work: "İşler",
+    services: "Hizmetler",
+    studio: "Stüdyo",
+    contact: "İletişim",
+    menu: "Menü",
+    close: "Kapat",
+    startProject: "Projeye başla",
+    skipToContent: "İçeriğe geç",
+    theme: "Görünüm",
+    themeLight: "Açık",
+    themeDark: "Koyu",
+    language: "Dil",
+  },
+
+  hero: {
+    eyebrow: "2014'ten beri bağımsız",
+    titleLead: "Markaların",
+    titleAccent: "frekansını",
+    titleTrail: "buluyoruz.",
+    lead: "Fourtune bağımsız bir markalama ajansı. Konumlandırmayı, kimliği ve ürünü; bir şirket göründüğü her yerde aynı şeyi söyleyene kadar akort ediyoruz.",
+    primary: "İşleri gör",
+    secondary: "Projeye başla",
+    scroll: "Kaydır",
+  },
+
+  showreel: {
+    label: "Tanıtım filmi",
+  },
+
+  ghost: {
+    label: "Duruşlar",
+    sets: [
+      ["Marka", "Ürün", "Hareket", "Sistem"],
+      ["Daha", "Keskin", "Daha", "Net"],
+      ["Önce", "Tonu", "Bul", "Sonra"],
+    ],
+  },
+
+  marquee: {
+    label: "Birlikte çalıştıklarımız",
+    items: [
+      "Northwind",
+      "Lumen Bank",
+      "Kestrel",
+      "Atlas Mobility",
+      "Orbit Health",
+      "Veridian",
+      "Halo Audio",
+      "Field Notes",
+    ],
+  },
+
+  intro: {
+    eyebrow: "Stüdyo",
+    title: "Küçük ekip. Uzun dikkat süresi.",
+    body: "Yılda az sayıda iş alıyoruz; böylece işi anlatan ekiple işi yapan ekip aynı oluyor. Devir teslim yok, araya giren müşteri katmanı yok — sadece ekip, problem ve doğru yapmaya yetecek zaman.",
+    stats: [
+      { value: "12", label: "Yıllık bağımsızlık" },
+      { value: "140", label: "Tamamlanan proje" },
+      { value: "28", label: "Kazanılan ödül" },
+      { value: "9", label: "Toplam kişi" },
+    ],
+  },
+
+  services: {
+    eyebrow: "Ne yapıyoruz",
+    title: "Altı disiplin, tek ekip.",
+    lead: "Çoğu stüdyo sizi departmanlar arasında dolaştırır. Biz strateji, tasarım ve mühendisliği aynı odada tutuyoruz — size gösterdiğimiz şeyin teslim ettiğimiz şey olmasının sebebi bu.",
+    deliverablesLabel: "Kapsam",
+    items: [
+      {
+        id: "strategy",
+        title: "Marka stratejisi",
+        summary:
+          "Konumlandırma, isimlendirme ve anlatı. Bir şirketin tek gerçek meselesini buluyor, geri kalan her şeyi ona bağlıyoruz.",
+        deliverables: [
+          "Pazar ve hedef kitle araştırması",
+          "Konumlandırma ve mesaj mimarisi",
+          "İsimlendirme ve sözlü kimlik",
+          "Marka mimarisi",
+        ],
+      },
+      {
+        id: "identity",
+        title: "Kimlik tasarımı",
+        summary:
+          "Logolar, tipografi sistemleri ve onları bir arada tutan kurallar — gerçek dünyayla temasa dayanacak şekilde tasarlanır.",
+        deliverables: [
+          "Logo ve amblem sistemleri",
+          "Tipografi ve renk",
+          "Sanat yönetimi",
+          "Kılavuz ve uygulama setleri",
+        ],
+      },
+      {
+        id: "product",
+        title: "Dijital ürün",
+        summary:
+          "İnsanların düşünmeden uzandığı arayüzler. Araştırma, akışlar, tasarım sistemleri ve gerçekten kullanılabilir prototipler.",
+        deliverables: [
+          "Ürün ve UX stratejisi",
+          "Arayüz tasarımı",
+          "Tasarım sistemleri",
+          "Etkileşimli prototipler",
+        ],
+      },
+      {
+        id: "motion",
+        title: "Hareket ve film",
+        summary:
+          "Animasyon bir süs değil, bir davranış. Her geçiş bir şeyin nereden geldiğini ve nereye gittiğini anlatır.",
+        deliverables: [
+          "Arayüz hareket sistemleri",
+          "Marka animasyonu",
+          "Yönetmenlik ve prodüksiyon",
+          "3B ve kompozit",
+        ],
+      },
+      {
+        id: "engineering",
+        title: "Web mühendisliği",
+        summary:
+          "Tasarladığımızı kendimiz kuruyoruz. Hızlı, erişilebilir arayüzler ve ekibinizin yıllarca içinde yaşayacağı içerik altyapısı.",
+        deliverables: [
+          "Next.js ve React geliştirme",
+          "Headless CMS entegrasyonu",
+          "Performans ve erişilebilirlik",
+          "Devir ve eğitim",
+        ],
+      },
+      {
+        id: "campaign",
+        title: "İçerik ve kampanya",
+        summary:
+          "Markayı bozmayan lansman işleri. Tek bir fikir, yaşayacağı her mecraya dürüstçe uyarlanır.",
+        deliverables: [
+          "Kampanya konseptleri",
+          "Sanat yönetimi ve çekimler",
+          "Sosyal ve editoryal sistemler",
+          "Lansman rehberleri",
+        ],
+      },
+    ],
+  },
+
+  work: {
+    eyebrow: "Seçilmiş işler",
+    title: "Yaptıklarımız ve nedenleri.",
+    lead: "Kısa bir seçki. Her biri, çoğu vaka çalışmasının atladığı kısmı da içeriyor: doğruyu bulmadan önce neyi yanlış yaptığımızı.",
+    viewAll: "Tüm işler",
+    viewCase: "Vakayı oku",
+    allProjects: "Tüm projeler",
+    nextProject: "Sonraki proje",
+    backToWork: "İşlere dön",
+    labels: {
+      client: "Müşteri",
+      year: "Yıl",
+      disciplines: "Disiplinler",
+      duration: "Süre",
+    },
+    sections: {
+      challenge: "Problem",
+      approach: "Ne yaptık",
+      outcome: "Sonuç",
+      results: "Rakamlar",
+    },
+  },
+
+  process: {
+    eyebrow: "Nasıl ilerliyor",
+    title: "Dört aşama. Sürpriz yok.",
+    lead: "Altı hafta da sürse altı ay da, her iş aynı şekilde ilerliyor. Hangi aşamada olduğunuzu ve sonunda elinize ne geçeceğini her zaman biliyorsunuz.",
+    steps: [
+      {
+        n: "01",
+        title: "Keşif",
+        body: "İki hafta görüşme, denetim ve dürüst sorular. Sonunda yazılı bir görüş sunuyoruz — duymak istemeyebileceğiniz kısımlar dahil.",
+      },
+      {
+        n: "02",
+        title: "Yön",
+        body: "Değerlendirilebilecek kadar ilerletilmiş iki ya da üç rota. Siz birini seçiyorsunuz; kurmaktan memnun olmayacağımız hiçbir şeyi sunmuyoruz.",
+      },
+      {
+        n: "03",
+        title: "Zanaat",
+        body: "Uzun orta bölüm. Haftalık çalışma oturumları, gerçek bileşenler, gerçek içerik — çözülmemiş bir problemi gizleyen cilalı maketler yok.",
+      },
+      {
+        n: "04",
+        title: "Lansman",
+        body: "Yayına alıyor, belgeliyor ve ekibinize öğretiyoruz. Sonra ilk çeyrek boyunca ulaşılabilir kalıyoruz; çünkü lansman hiçbir zaman son değildir.",
+      },
+    ],
+  },
+
+  testimonials: {
+    eyebrow: "Onların ifadesiyle",
+    title: "Bizimle çalışmak nasıl bir şey?",
+    items: [
+      {
+        quote:
+          "İlk hafta brief'imize itiraz ettiler ve haklıydılar. Marka yenilemesi bu yüzden bir çeyrek erken tamamlandı.",
+        name: "Selin Arda",
+        role: "Pazarlama Direktörü, Lumen Bank",
+      },
+      {
+        quote:
+          "Prototip nihai ürüne o kadar yakındı ki mühendislerimiz onu şartname olarak kullandı. Bunu daha önce hiç görmemiştim.",
+        name: "Jonas Weiss",
+        role: "Ürün Direktörü, Atlas Mobility",
+      },
+      {
+        quote:
+          "Önceki ajansımızın kırk kişiyle yaptığını dokuz kişi yaptı ve her aradığımızda telefona çıktılar.",
+        name: "Marie Lambert",
+        role: "Kurucu, Field Notes",
+      },
+    ],
+  },
+
+  studio: {
+    eyebrow: "Stüdyo",
+    title: "Yönetmektense yapmayı seçen dokuz kişi.",
+    lead: "Fourtune 2014'te Bomonti'de tek odalı bir ofiste başladı. Yavaş ve bilerek büyüdük — ciddi iş çıkaracak kadar kalabalık, herkesin herkesin ne yaptığını bileceği kadar az.",
+    body: [
+      "Devir teslimden yorulmuş stratejistler, tasarımcılar ve mühendisleriz. Problemi kuran kişi, iş inşa edilirken de odada oluyor; bu da koca bir çeviri kaybı kategorisini ortadan kaldırıyor.",
+      "Yılda dört ila altı iş alıyoruz. Bu sayı dayattığımız bir sınır değil, seçtiğimiz bir kısıt — her projeye hak ettiği dikkati verip yine de akşam yemeğine yetişmemizi sağlayan şey.",
+      "Stüdyo bağımsız ve öyle kalmaya niyetli. Holding yok, müşterilerimizle hiç tanışmamış birinin belirlediği büyüme hedefleri yok.",
+    ],
+    valuesTitle: "Nasıl çalışıyoruz",
+    values: [
+      {
+        title: "Söz vermeden önce prototiple",
+        body: "Etkileşimli bir demo, bin durağan kareye bedel. Bir şeyi prototipte doğru hissettiremiyorsak sunuma koymuyoruz.",
+      },
+      {
+        title: "Yokluk da tasarımdır",
+        body: "Her öğe yerini hak eder. Kısıtlılık kendi başına bir minimalizm değil — önemli olanı bariz kılan şeydir.",
+      },
+      {
+        title: "Her değeri savun",
+        body: "Hiçbir şey rastgele değil. Bir boşluğun, bir sürenin ya da bir hizanın neden öyle olduğunu sorun, cevabı var.",
+      },
+      {
+        title: "Yayına al, sonra kal",
+        body: "Lansman hikâyenin ortası. İlk çeyrek boyunca yakın duruyoruz; gerçek geri bildirim tam o zaman geliyor.",
+      },
+    ],
+    teamTitle: "Ekip",
+    team: [
+      { name: "Deniz Yalçın", role: "Kurucu, strateji" },
+      { name: "Ayla Kurt", role: "Tasarım direktörü" },
+      { name: "Tom Rehn", role: "Baş mühendis" },
+      { name: "Nora Fischer", role: "Hareket direktörü" },
+      { name: "Emre Solak", role: "Ürün tasarımı" },
+      { name: "Julia Brandt", role: "Marka tasarımı" },
+      { name: "Kaan Öz", role: "Ön yüz mühendisliği" },
+      { name: "Léa Moreau", role: "İçerik ve editoryal" },
+      { name: "Sara Kaya", role: "Stüdyo operasyonu" },
+    ],
+    officeTitle: "Neredeyiz",
+  },
+
+  contact: {
+    eyebrow: "Merhaba deyin",
+    title: "Ne kurduğunuzu anlatın.",
+    lead: "Her mesajı kendimiz okuyor ve iki iş günü içinde yanıtlıyoruz. Doğru stüdyo biz değilsek bunu söyler, sizi daha iyi bir yere yönlendiririz.",
+    formTitle: "Proje talebi",
+    form: {
+      name: "Adınız",
+      namePlaceholder: "Ayşe Yılmaz",
+      email: "E-posta",
+      emailPlaceholder: "ayse@sirket.com",
+      company: "Şirket",
+      companyPlaceholder: "Şirket adı",
+      budget: "Bütçe aralığı",
+      budgetPlaceholder: "Bir aralık seçin",
+      message: "Ne üzerinde çalışıyorsunuz?",
+      messagePlaceholder:
+        "Bir paragraf yeter. Problem ne ve ne zamana kadar çözülmesi gerekiyor?",
+      submit: "Talebi gönder",
+      sending: "Gönderiliyor…",
+      optional: "isteğe bağlı",
+      successTitle: "Mesaj gönderildi",
+      successBody: "Teşekkürler — elimize ulaştı. İki iş günü içinde döneceğiz.",
+      errorTitle: "Gönderilemedi",
+      errorBody:
+        "Bizim tarafta bir şeyler ters gitti. Doğrudan e-posta atın, oradan devam edelim.",
+      sendAnother: "Yeni mesaj gönder",
+    },
+    budgets: [
+      "25.000 € altı",
+      "25.000 € – 60.000 €",
+      "60.000 € – 150.000 €",
+      "150.000 € üzeri",
+      "Henüz belli değil",
+    ],
+    validation: {
+      nameRequired: "Lütfen adınızı yazın.",
+      emailRequired: "Yanıt verebilmek için bir e-posta gerekiyor.",
+      emailInvalid: "Bu bir e-posta adresine benzemiyor.",
+      messageRequired: "Başlamak için bir iki cümle yeterli.",
+      messageShort: "Biraz daha ayrıntı işimizi kolaylaştırır.",
+    },
+    directTitle: "Ya da doğrudan ulaşın",
+    officeTitle: "Stüdyo",
+    hoursTitle: "Çalışma saatleri",
+    hours: "Pazartesi – Cuma, 09.00 – 18.00 (GMT+3)",
+    responseNote: "Ortalama yanıt süresi: 1,4 iş günü",
+  },
+
+  cta: {
+    eyebrow: "Sıradaki adım",
+    title: "Yapmaya değer bir şey mi var?",
+    body: "Anlatın. En kötü ihtimalle, bunu daha önce yapmış insanlardan dürüst bir ikinci görüş almış olursunuz.",
+    action: "Projeye başla",
+    secondary: "E-posta gönder",
+  },
+
+  footer: {
+    tagline: "İstanbul merkezli bağımsız bir tasarım ve teknoloji stüdyosu.",
+    navTitle: "Site",
+    socialTitle: "Diğer mecralar",
+    contactTitle: "İletişim",
+    rights: "Tüm hakları saklıdır.",
+    colophon: "Stüdyoda geliştirildi. Tipografi: SF Pro ve Inter.",
+    backToTop: "Yukarı dön",
+    localeTitle: "Dil",
+  },
+
+  projects: {
+    aurora: {
+      title: "Kendini açıklamayı bırakan bir banka",
+      client: "Lumen Bank",
+      category: "Dijital ürün",
+      duration: "9 ay",
+      summary:
+        "Bir bireysel bankacılık uygulamasını tek bir soru etrafında yeniden kurduk: müşterinin şu anda bilmesi gereken ne?",
+      challenge:
+        "Lumen'in uygulaması kimsenin istemediği özelliklerden oluşan 84 ekrana ulaşmıştı. İşlevler arttıkça destek çağrıları da artıyordu ve en sık şikâyet eksik bir özellik değildi — insanlar var olanları bulamıyordu.",
+      approach:
+        "Bilgi mimarisini dört yüzeye indirdik ve etkileşim modelini doğrudan manipülasyon üzerine yeniden kurduk: dokunuşa yanıt veren bakiyeler, ayrıştırılabilen işlemler ve her zaman geldiği yere dönen geçişler. Tasarım sistemi geliştirmeden sonra değil, onunla birlikte teslim edildi.",
+      outcome:
+        "Yeni uygulama tek çeyrekte on bir pazarda yayına alındı. Destek hacmi üç yılda ilk kez düştü ve tasarım sistemi artık web platformunu da çalıştırıyor.",
+      results: [
+        { value: "−%38", label: "Destek talebi" },
+        { value: "4,8", label: "App Store puanı" },
+        { value: "2,1sn", label: "İlk eyleme süre" },
+      ],
+    },
+    atlas: {
+      title: "Yüzü olan bir ulaşım markası",
+      client: "Atlas Mobility",
+      category: "Marka kimliği",
+      duration: "6 ay",
+      summary:
+        "Lojistiği mükemmel, kişiliği hiç olmayan bir filo işletmecisi. Ona bir kişilik verdik.",
+      challenge:
+        "Atlas ayda iki milyon kişiyi taşıyor ve bunu görünmez şekilde yapıyordu. Araç giydirmesinden bilet fişine kadar her şey üç ayrı şirketten çıkmış gibi duruyordu — çünkü öyleydi.",
+      approach:
+        "Uygulama açılışından otobüsün yan yüzeyine kadar tek bir amblem, tek bir tipografi sistemi, tek bir hareket imzası. Önce yönlendirme tasarımını yaptık — en zor kısıt oydu — ve geri kalan her şeyi ondan türettik.",
+      outcome:
+        "Kimlik on dört ayda 1.400 araç ve 90 istasyona uygulandı. Ana pazarda yardımsız marka hatırlanırlığı yaklaşık ikiye katlandı.",
+      results: [
+        { value: "×2,1", label: "Marka hatırlanırlığı" },
+        { value: "1.400", label: "Yenilenen araç" },
+        { value: "14 ay", label: "Tam uygulama" },
+      ],
+    },
+    vela: {
+      title: "Göz kırpmadan açılan bir mağaza",
+      client: "Veridian",
+      category: "Ürün ve mühendislik",
+      duration: "7 ay",
+      summary:
+        "Ağ katmanından itibaren yeniden kurulmuş bir vitrin; çünkü en hızlı arayüz, hâlihazırda orada olandır.",
+      challenge:
+        "Veridian'ın kataloğu güzeldi ve ofis wi-fi'ı dışında kullanılamıyordu. Mobil dönüşüm masaüstünün üçte biriydi ve aradaki farkın neredeyse tamamı yüklenme süresiydi.",
+      approach:
+        "Uçta render edilen bir katalogla Next.js üzerine yeniden kurduk, tasarım sistemini iki ekibin de sahiplenebileceği bir token katmanına taşıdık ve bekleten her spinner'ı zaten işe yarar bir şey gösteren bir durumla değiştirdik.",
+      outcome:
+        "Medyan mobil yüklenme bir saniyenin altına indi. Mobil dönüşüm, lansmandan iki ay sonra masaüstüyle arasındaki farkın büyük kısmını kapattı.",
+      results: [
+        { value: "0,9sn", label: "Medyan mobil yüklenme" },
+        { value: "+%31", label: "Mobil dönüşüm" },
+        { value: "100", label: "Lighthouse erişilebilirlik" },
+      ],
+    },
+    tessera: {
+      title: "Karşı kaldırımdan okunan bir müze",
+      client: "Tessera",
+      category: "Kimlik ve kampanya",
+      duration: "5 ay",
+      summary:
+        "Tek bir modüler ızgaradan kurulmuş bir kimlik — on bir bölüme yetecek kadar esnek, tanınır kalacak kadar katı.",
+      challenge:
+        "On bir küratöryel bölüm yirmi yıl boyunca kendi görünüşünü ayrı ayrı yaptırmıştı. Ziyaretçiler tek bir müze değil, aynı çatıyı paylaşan on bir müze deneyimliyordu.",
+      approach:
+        "Tek bir karo ızgarası; afişten duvar etiketine, telefon ekranına kadar her yerleşimi üretiyor. Bölümler sistem içinde renk ve yoğunluk seçiyor; yani parçalanmadan kimlik kazanıyorlar.",
+      outcome:
+        "Yönlendirme, basılı işler, kampanya ve biletleme platformuna uygulandı. Bölümler sistemi gönüllü olarak benimsedi — önemli olan tek benimseme ölçütü de bu.",
+      results: [
+        { value: "11", label: "Birleşen bölüm" },
+        { value: "+%24", label: "Bilet dönüşümü" },
+        { value: "1", label: "Izgara, her yerde" },
+      ],
+    },
+    halo: {
+      title: "Görülebilen ses",
+      client: "Halo Audio",
+      category: "Ürün ve hareket",
+      duration: "4 ay",
+      summary:
+        "Üst segment kulaklıklar için bir eşlikçi uygulama; arayüz, donanımın hissettirdiği gibi davranıyor.",
+      challenge:
+        "Halo olağanüstü bir donanım üretip yanına bir ayarlar menüsü koymuştu. 600 €'luk bir ürünün sahipleri markayla bir dizi anahtar üzerinden tanışıyordu.",
+      approach:
+        "Tüm arayüzü yaylar üzerine kurduk: sürükleyerek konumlandırdığınız uzamsal ses, parmağınızın momentumunu taşıyan EQ eğrileri ve dokunduğunuz kartın tam kendisinden açılan çalma ekranı.",
+      outcome:
+        "Uygulama, donanımın yanına iliştirilmiş bir ek olmaktan çıkıp onu satın alma gerekçesine dönüştü. İncelemeler ondan başlıyordu.",
+      results: [
+        { value: "4,9", label: "App Store puanı" },
+        { value: "+%46", label: "Özellik kullanımı" },
+        { value: "120fps", label: "Cihazda sürekli" },
+      ],
+    },
+    fieldnotes: {
+      title: "Rafını hak eden bir kırtasiye markası",
+      client: "Field Notes Co.",
+      category: "Kimlik ve kampanya",
+      duration: "4 ay",
+      summary:
+        "Dokunulabilir ürünlerle yarışan bir kâğıt şirketi için önce perakendeyi düşünen bir kimlik.",
+      challenge:
+        "Field Notes yanındaki raftaki herkesten iyi defter üretiyor ve üçte biri kadar satıyordu. Tüm işi ürün yapıyor, ambalaj hiçbir şey yapmıyordu.",
+      approach:
+        "Ambalajı birincil mecra olarak tasarladık — kimlik, mağazada bir kol boyu mesafeden gördüğünüz şeydir — sonra onu geriye doğru dijital vitrine ve kampanyaya taşıdık.",
+      outcome:
+        "İki ülkede 300 satış noktasında yeniden lanse edildi. Raf devir hızı iki yeni ürün hattını finanse edecek kadar arttı.",
+      results: [
+        { value: "+%58", label: "Raf devir hızı" },
+        { value: "300", label: "Satış noktası" },
+        { value: "2", label: "Finanse edilen hat" },
+      ],
+    },
+  },
+
+  a11y: {
+    scrollProgress: "Okuma ilerlemesi",
+    openMenu: "Gezinme menüsünü aç",
+    closeMenu: "Gezinme menüsünü kapat",
+    toggleTheme: "Açık ve koyu görünüm arasında geçiş yap",
+    previous: "Önceki",
+    next: "Sonraki",
+    pauseMarquee: "Kayan listeyi durdur",
+    playMarquee: "Kayan listeyi devam ettir",
+    pauseVideo: "Filmi duraklat",
+    playVideo: "Filmi oynat",
+    muteVideo: "Sesi kapat",
+    unmuteVideo: "Sesi aç",
+  },
+
+  notFound: {
+    title: "Bu sayfa yoluna devam etti.",
+    body: "Bağlantı ölmüş olabilir ama işler duruyor. Stüdyonun seçilmiş projelerine göz atın.",
+    action: "Ana sayfaya dön",
+  },
+};
+
+export default tr;
