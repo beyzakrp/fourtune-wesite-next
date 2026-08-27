@@ -237,6 +237,7 @@ const tr: Dictionary = {
     eyebrow: "Stüdyo",
     previewEyebrow: "Ekibimiz",
     previewTitle: "Bizim hikayemiz",
+    previewAction: "Birbirimizi tanıyalım",
     title: "Yönetmektense yapmayı seçen dokuz kişi.",
     lead: "Fourtune 2014'te Bomonti'de tek odalı bir ofiste başladı. Yavaş ve bilerek büyüdük — ciddi iş çıkaracak kadar kalabalık, herkesin herkesin ne yaptığını bileceği kadar az.",
     body: [

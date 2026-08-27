@@ -882,10 +882,6 @@
     margin-left: -0.5rem;
   }
 
-  .loader-wordmark {
-    font-size: min(2rem, 7vw);
-  }
-
   /* The fill is state-driven, so the state is an attribute and the timing
      lives here rather than being rebuilt as a string on every render. */
   .loader-fill {

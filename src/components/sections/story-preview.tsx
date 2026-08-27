@@ -22,15 +22,6 @@ export function StoryPreview({
 }) {
   return (
     <div className="relative isolate">
-      <Image
-        src="/Brand-Icon.svg"
-        alt=""
-        width={560}
-        height={560}
-        aria-hidden
-        className="pointer-events-none absolute -right-[12%] -top-[42%] -z-10 w-[clamp(18rem,38vw,35rem)] -rotate-12 select-none opacity-[0.07] dark:opacity-[0.1]"
-      />
-
       <div className="grid items-center gap-12 lg:grid-cols-[0.78fr_1.35fr] lg:gap-16 xl:gap-24">
         <div className="max-w-xl">
           <Reveal distance={0}>
@@ -60,7 +51,7 @@ export function StoryPreview({
           </Reveal>
 
           <Reveal delay={0.26} className="mt-8">
-            <ButtonLink href={href} variant="secondary">
+            <ButtonLink href={href} variant="primary">
               {action}
             </ButtonLink>
           </Reveal>

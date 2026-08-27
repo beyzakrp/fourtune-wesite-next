@@ -244,6 +244,7 @@ const en = {
     eyebrow: "The studio",
     previewEyebrow: "Team",
     previewTitle: "Our story",
+    previewAction: "Let’s get to know each other",
     title: "Nine people who would rather make than manage.",
     lead: "Fourtune started in 2014 in a one-room office in Bomonti. We have grown slowly and on purpose — enough people to do serious work, few enough that everyone knows what everyone else is doing.",
     body: [

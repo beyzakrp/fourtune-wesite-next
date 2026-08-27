@@ -236,6 +236,7 @@ const de: Dictionary = {
     eyebrow: "Das Studio",
     previewEyebrow: "Unser Team",
     previewTitle: "Unsere Geschichte",
+    previewAction: "Lernen wir uns kennen",
     title: "Neun Menschen, die lieber machen als verwalten.",
     lead: "Fourtune begann 2014 in einem Einzimmerbüro in Bomonti. Wir sind langsam und mit Absicht gewachsen — groß genug für ernsthafte Arbeit, klein genug, dass jede und jeder weiß, woran die anderen arbeiten.",
     body: [

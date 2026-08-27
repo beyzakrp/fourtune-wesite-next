@@ -54,7 +54,7 @@ export function Wordmark({
           without them, light theme would print an ink wordmark on navy. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/brand/logo/new-logo-black-pink.svg"
+        src="/brand/logo/logo-4-tune-pink.svg"
         alt={name}
         width={500}
         height={250}
@@ -62,7 +62,7 @@ export function Wordmark({
       />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/brand/logo/new-logo-black-pink.svg"
+        src="/brand/logo/logo-4-tune-pink.svg"
         alt=""
         aria-hidden
         width={500}

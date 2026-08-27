@@ -2,10 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { site } from "@/lib/site";
 import { markIntroReady } from "@/lib/intro";
 import { springMove } from "@/lib/motion/springs";
-import { Sparkle } from "./wordmark";
 
 const MIN_VISIBLE_MS = 1400;
 const MAX_VISIBLE_MS = 2600;
@@ -89,16 +87,16 @@ export function IntroLoader() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={springMove}
-        className="flex items-center gap-3"
+        className="flex items-center justify-center"
       >
-        <Sparkle className="size-7 text-accent" />
-        {/* Sized in vw with a ceiling rather than from the type scale: at the
-            scale's 3rem the wordmark plus its 0.2em tracking overflows a phone
-            viewport, and a wordmark clipped at both edges is a poor first
-            impression of a brand. */}
-        <span className="loader-wordmark font-display font-semibold uppercase tracking-[0.2em]">
-          {site.name}
-        </span>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/brand/logo/new-logo-white-pink.svg"
+          alt=""
+          width={611}
+          height={128}
+          className="h-auto w-[min(78vw,24rem)]"
+        />
       </motion.span>
 
       <span className="h-px w-40 overflow-hidden rounded-full bg-[rgb(255_255_255/0.2)]">

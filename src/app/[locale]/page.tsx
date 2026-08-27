@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
@@ -108,18 +109,28 @@ export default async function HomePage({
       {/* Programs */}
       <section
         id="programs"
-        className="band-soft mt-3 section-x py-24"
+        className="band-soft relative isolate mt-3 overflow-hidden section-x py-24"
       >
-        <SectionHeading
-          eyebrow={dict.services.eyebrow}
-          title={dict.services.title}
+        <Image
+          src="/Brand-Icon.svg"
+          alt=""
+          width={560}
+          height={560}
+          aria-hidden
+          className="pointer-events-none absolute -right-[2%] -top-[5%] z-0 w-[clamp(18rem,38vw,35rem)] -rotate-12 select-none opacity-[0.07] dark:opacity-[0.1]"
         />
-        <ProgramList rows={programRows} />
-        <Reveal className="mt-12">
-          <ButtonLink href={`${base}/services`} variant="secondary">
-            {dict.nav.services}
-          </ButtonLink>
-        </Reveal>
+        <div className="relative z-10">
+          <SectionHeading
+            eyebrow={dict.services.eyebrow}
+            title={dict.services.title}
+          />
+          <ProgramList rows={programRows} />
+          <Reveal className="mt-12">
+            <ButtonLink href={`${base}/services`} variant="secondary">
+              {dict.nav.services}
+            </ButtonLink>
+          </Reveal>
+        </div>
       </section>
 
       {/* A compact introduction to the studio, with the full story one level
@@ -135,7 +146,7 @@ export default async function HomePage({
           body={dict.studio.lead}
           image={homeStoryPhoto}
           href={`${base}/studio`}
-          action={dict.nav.studio}
+          action={dict.studio.previewAction}
         />
       </section>
 
