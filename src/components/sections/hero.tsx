@@ -7,7 +7,7 @@ import { Aurora } from "./aurora";
 import { heroPhoto } from "@/lib/content/photos";
 import { ButtonLink } from "@/components/ui/button";
 import { Magnetic } from "@/components/motion/magnetic";
-import { GlassCarousel, type GlassSlide } from "@/components/ui/glass-carousel";
+import type { GlassSlide } from "@/components/ui/glass-carousel";
 import { scrollTo } from "@/components/motion/smooth-scroll";
 import { springMove } from "@/lib/motion/springs";
 import { useIntroReady } from "@/lib/intro";
@@ -134,10 +134,9 @@ export function Hero({
             <Aurora />
           </div>
         </motion.div>
-       
-        <div className="absolute inset-0" style={{ background: SCRIM_VERTICAL }} /> {/* Both scrims are defined at the top of this file. 
+        {/* <div className="absolute inset-0" style={{ background: SCRIM_VERTICAL }} /> Both scrims are defined at the top of this file.
         <div className="absolute inset-0" style={{ background: SCRIM_HORIZONTAL }} />*/}
-        
+
       </div>
 
       <motion.div
@@ -150,42 +149,24 @@ export function Hero({
             headings — it simply is not painted. */}
         <h1 className="sr-only">{fullTitle}</h1>
 
-        <div className="container-page mt-auto flex flex-col gap-6 pb-8 sm:flex-row sm:items-end sm:justify-between sm:pb-10">
-          <div className="max-w-[42ch]">
-            <motion.p
-              initial={{ opacity: 0, y: 12 }}
-              animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
-              transition={{ ...springMove, delay: 0.05 }}
-              className="mb-4 type-eyebrow text-[rgb(255_255_255/0.7)]"
-            >
-              {copy.eyebrow}
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-              transition={{ ...springMove, delay: 0.45 }}
-              className="type-body text-[rgb(255_255_255/0.85)]"
-            >
-              {copy.lead}
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-              transition={{ ...springMove, delay: 0.55 }}
-              className="mt-7 flex flex-wrap items-center gap-3"
-            >
-              <Magnetic>
-                <ButtonLink href={workHref}>{copy.primary}</ButtonLink>
-              </Magnetic>
-              <Magnetic>
-                <ButtonLink href={contactHref} variant="secondary">
-                  {copy.secondary}
-                </ButtonLink>
-              </Magnetic>
-            </motion.div>
-          </div>
+        <div className="container-page mt-auto flex justify-center pb-14 sm:pb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+            transition={{ ...springMove, delay: 0.45 }}
+            className="grid w-full max-w-sm grid-cols-2 gap-3"
+          >
+            <Magnetic className="w-full">
+              <ButtonLink href={workHref} className="w-full">
+                {copy.primary}
+              </ButtonLink>
+            </Magnetic>
+            <Magnetic className="w-full">
+              <ButtonLink href={contactHref} variant="glass" className="w-full">
+                {copy.secondary}
+              </ButtonLink>
+            </Magnetic>
+          </motion.div>
 
           {/*<div className="hidden items-end gap-4 md:flex">
             <motion.div

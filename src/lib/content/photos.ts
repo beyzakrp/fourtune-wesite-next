@@ -38,7 +38,7 @@ export const heroPhoto: Photo = {
    * point this back at it — the framing is a design choice, the blur was only
    * ever a resolution problem.
    */
-  src: "/images/madeYouLook-bannerWide2.png",
+  src: "/images/madeYouLook-bannerWide-final.png",
   alt: "",
 };
 

@@ -6,7 +6,7 @@ import clsx from "clsx";
 import type { ReactNode } from "react";
 import { springSnappy } from "@/lib/motion/springs";
 
-type Variant = "primary" | "secondary" | "ghost" | "light";
+type Variant = "primary" | "secondary" | "ghost" | "light" | "glass";
 type Size = "md" | "lg";
 
 const base =
@@ -22,6 +22,8 @@ const variants: Record<Variant, string> = {
   ghost: "text-fg-secondary hover:text-fg",
   /* For use on a dark band, where the page's own accent would sink into it. */
   light: "bg-white text-band hover:bg-accent hover:text-white",
+  /* Clear glass for controls placed directly over photography. */
+  glass: "glass-panel text-fg-secondary hover:bg-white/25",
 };
 
 const sizes: Record<Size, string> = {

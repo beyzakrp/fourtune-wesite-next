@@ -42,6 +42,7 @@ export function Header({ locale, copy }: { locale: Locale; copy: HeaderCopy }) {
   const menuId = "site-menu";
 
   function isActive(href: string) {
+    if (href === home) return pathname === home;
     return pathname === href || pathname.startsWith(`${href}/`);
   }
 
@@ -76,7 +77,10 @@ export function Header({ locale, copy }: { locale: Locale; copy: HeaderCopy }) {
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className="sh-link"
               >
-                {item.label}
+                <span className="sh-link-base">{item.label}</span>
+                <span aria-hidden className="sh-link-hover">
+                  {item.label}
+                </span>
               </Link>
             ))}
           </nav>

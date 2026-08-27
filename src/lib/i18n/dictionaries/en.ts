@@ -18,9 +18,9 @@ const en = {
 
   nav: {
     home: "Home",
-    work: "Work",
+    work: "Portfolio",
     services: "Services",
-    studio: "Studio",
+    studio: "Our Story",
     contact: "Contact",
     menu: "Menu",
     close: "Close",

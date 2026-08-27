@@ -163,9 +163,7 @@ export function MobileMenu({
                       href={item.href}
                       onClick={onClose}
                       aria-current={active ? "page" : undefined}
-                      className={`flex min-h-[52px] items-center justify-between border-b border-line type-h3 transition-opacity active:opacity-60 ${
-                        active ? "text-fg" : "text-fg-secondary"
-                      }`}
+                      className="flex min-h-[52px] items-center justify-between border-b border-line type-h3 text-fg-secondary transition-opacity active:opacity-60"
                     >
                       {item.label}
                       {active ? (

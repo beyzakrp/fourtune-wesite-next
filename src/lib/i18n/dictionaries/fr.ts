@@ -11,9 +11,9 @@ const fr: Dictionary = {
 
   nav: {
     home: "Accueil",
-    work: "Projets",
+    work: "Portfolio",
     services: "Services",
-    studio: "Studio",
+    studio: "Notre histoire",
     contact: "Contact",
     menu: "Menu",
     close: "Fermer",

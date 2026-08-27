@@ -18,11 +18,10 @@ import { ThemeScript } from "@/components/site/theme-script";
 /**
  * The real brand faces, self-hosted from `src/fonts/`.
  *
- * Only three weights of each are loaded, because only three are used: 400 for
- * body copy, 500 for the type scale, 600 for the wordmark and the loader. The
- * families ship eighteen cuts apiece; shipping the rest would be roughly half
- * a megabyte the design never asks for. Italics are excluded for the same
- * reason — nothing in the layout sets one.
+ * Only the weights used by the interface are loaded: 400 for body copy, 500
+ * for the type scale, 600 for the wordmark and loader, plus Elms Sans 700 for
+ * the navigation hover state. Instrument Serif Italic remains available as an
+ * optional display accent.
  *
  * `next/font/local` hashes and preloads these at build time and generates the
  * @font-face rules, so there is no FOUT handling to write by hand.
@@ -42,8 +41,17 @@ const elmsSans = localFont({
     { path: "../../fonts/ElmsSans-Regular.ttf", weight: "400", style: "normal" },
     { path: "../../fonts/ElmsSans-Medium.ttf", weight: "500", style: "normal" },
     { path: "../../fonts/ElmsSans-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "../../fonts/ElmsSans-Bold.ttf", weight: "700", style: "normal" },
   ],
   variable: "--font-elms",
+  display: "swap",
+});
+
+const instrumentSerif = localFont({
+  src: "../../fonts/InstrumentSerif-Italic.ttf",
+  weight: "400",
+  style: "italic",
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
@@ -107,7 +115,7 @@ export default async function LocaleLayout({
       data-theme="dark"
       /* next/font variables live on <html> so the theme font stacks in
          globals.css can reference them from :root. */
-      className={`${metropolis.variable} ${elmsSans.variable}`}
+      className={`${metropolis.variable} ${elmsSans.variable} ${instrumentSerif.variable}`}
       suppressHydrationWarning
     >
       <head>

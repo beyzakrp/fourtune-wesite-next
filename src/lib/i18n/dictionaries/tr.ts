@@ -12,9 +12,9 @@ const tr: Dictionary = {
 
   nav: {
     home: "Ana sayfa",
-    work: "İşler",
+    work: "Portfolyo",
     services: "Hizmetler",
-    studio: "Stüdyo",
+    studio: "Hikâyemiz",
     contact: "İletişim",
     menu: "Menü",
     close: "Kapat",
@@ -32,8 +32,8 @@ const tr: Dictionary = {
     titleAccent: "frekansını",
     titleTrail: "buluyoruz.",
     lead: "Fourtune bağımsız bir markalama ajansı. Konumlandırmayı, kimliği ve ürünü; bir şirket göründüğü her yerde aynı şeyi söyleyene kadar akort ediyoruz.",
-    primary: "İşleri gör",
-    secondary: "Projeye başla",
+    primary: "İşleri Gör",
+    secondary: "Projeye Başla",
     scroll: "Kaydır",
   },
 

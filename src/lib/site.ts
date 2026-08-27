@@ -50,9 +50,10 @@ export const brandColors = {
  * only the `[locale]` prefix changes. Labels come from the dictionary.
  */
 export const navItems = [
-  { key: "work", href: "/work" },
-  { key: "services", href: "/services" },
+  { key: "home", href: "" },
   { key: "studio", href: "/studio" },
+  { key: "services", href: "/services" },
+  { key: "work", href: "/work" },
   { key: "contact", href: "/contact" },
 ] as const;
 
