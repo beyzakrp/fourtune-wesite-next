@@ -42,17 +42,18 @@ export const heroPhoto: Photo = {
   alt: "",
 };
 
+/** Project listing and case-study covers. */
 export const projectPhotos: Record<ProjectId, Photo> = {
   aurora: {
-    src: `${CDN}/photo-1510074377623-8cf13fb86c08`,
+    src: `https://i.pinimg.com/1200x/d8/ed/af/d8edafa7434d888a7dccced9ebaf6500.jpg`,
     alt: "Turned off flat screen monitors on top of beige desks",
   },
   atlas: {
-    src: `${CDN}/photo-1498075702571-ecb018f3752d`,
+    src: `https://i.pinimg.com/736x/28/86/7d/28867d4b89876ed649b1ea8ced422f69.jpg`,
     alt: "Person lettering on tracing paper using a mechanical pencil",
   },
   vela: {
-    src: `${CDN}/photo-1556761175-4b46a572b786`,
+    src: `https://i.pinimg.com/736x/5e/8d/d3/5e8dd3dfde496481cd3f35b764013d78.jpg`,
     alt: "Person in a blue shirt sitting on a rolling chair in a room with monitors",
   },
   tessera: {
@@ -67,4 +68,65 @@ export const projectPhotos: Record<ProjectId, Photo> = {
     src: `${CDN}/photo-1620912189875-3fdb2380621b`,
     alt: "Person in a black jacket holding a sheet of white printer paper",
   },
+};
+
+/**
+ * Home hero carousel photography. This remains independent even though its
+ * slides point to the same projects as the work section.
+ */
+export const homeHeroCarouselPhotos: Partial<Record<ProjectId, Photo>> = {
+  aurora: {
+    src: "https://i.pinimg.com/1200x/99/ab/0b/99ab0bde2a229d71b44780b4aad5308d.jpg",
+    alt: "Office interior with desks and large windows",
+  },
+  atlas: {
+    src: "https://i.pinimg.com/736x/6c/37/26/6c3726946a34d898522d58dcdcd9ce68.jpg",
+    alt: "Bright creative office with shared work tables",
+  },
+  vela: {
+    src: "https://i.pinimg.com/736x/4c/c8/33/4cc833d3d34fceb593ac0c6bb71cbde1.jpg",
+    alt: "Team working together in a modern office",
+  },
+};
+
+/** Independent front and rear images for the home-page TrustBand stack. */
+export const homeTrustPhotos: Partial<
+  Record<ProjectId, { front: Photo; back: Photo }>
+> = {
+  aurora: {
+    front: {
+      src: "https://i.pinimg.com/1200x/d8/ed/af/d8edafa7434d888a7dccced9ebaf6500.jpg",
+      alt: "Creative team gathered around a table",
+    },
+    back: {
+      src: "https://i.pinimg.com/1200x/99/ab/0b/99ab0bde2a229d71b44780b4aad5308d.jpg",
+      alt: "Secondary campaign visual for Aurora",
+    },
+  },
+  atlas: {
+    front: {
+      src: "https://i.pinimg.com/736x/28/86/7d/28867d4b89876ed649b1ea8ced422f69.jpg",
+      alt: "People collaborating around a studio table",
+    },
+    back: {
+      src: "https://i.pinimg.com/736x/6c/37/26/6c3726946a34d898522d58dcdcd9ce68.jpg",
+      alt: "Secondary campaign visual for Atlas",
+    },
+  },
+  vela: {
+    front: {
+      src: "https://i.pinimg.com/736x/5e/8d/d3/5e8dd3dfde496481cd3f35b764013d78.jpg",
+      alt: "Team meeting in a bright workspace",
+    },
+    back: {
+      src: "https://i.pinimg.com/736x/4c/c8/33/4cc833d3d34fceb593ac0c6bb71cbde1.jpg",
+      alt: "Secondary campaign visual for Vela",
+    },
+  },
+};
+
+/** Team image used only by the home-page Our Story preview. */
+export const homeStoryPhoto: Photo = {
+  src: "https://i.pinimg.com/736x/7d/29/c1/7d29c1d486771ef727933f741b6ab5ae.jpg",
+  alt: "The Fourtune team discussing work in a meeting room",
 };

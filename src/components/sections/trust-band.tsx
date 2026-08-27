@@ -13,6 +13,7 @@ export type TrustSlide = {
   palette: [string, string, string];
   mark: string;
   photo?: string;
+  backPhoto?: string;
   name: string;
   role: string;
 };
@@ -59,8 +60,55 @@ export function TrustBand({
           className="flex size-28 shrink-0 flex-col items-center justify-center rounded-full bg-surface p-4 text-center sm:size-32"
           distance={0}
         >
-          <span className="text-2xl font-medium leading-none">{badge.value}</span>
-          <span className="mt-1 max-w-[7em] text-[0.6rem] leading-snug text-fg-muted">
+          <span
+            aria-hidden
+            className="relative grid h-14 w-16 place-items-center text-fg sm:h-16 sm:w-[4.5rem]"
+          >
+            <svg
+              viewBox="0 0 80 58"
+              className="absolute inset-0 size-full"
+              fill="none"
+            >
+              <defs>
+                <marker
+                  id="orbit-arrow"
+                  viewBox="0 0 7 7"
+                  refX="6"
+                  refY="3.5"
+                  markerWidth="5"
+                  markerHeight="5"
+                  orient="auto"
+                >
+                  <path d="M0 0 7 3.5 0 7Z" fill="currentColor" />
+                </marker>
+              </defs>
+              <text
+                x="40"
+                y="24"
+                fill="currentColor"
+                textAnchor="middle"
+                fontFamily="var(--font-sans)"
+                fontSize="24"
+                fontWeight="700"
+              >
+                {badge.value}
+              </text>
+              <path
+                d="M18 28.5C5.5 32 6 40.5 17.5 46c10.5 5 25.5 5.8 37.5 1.2"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                markerEnd="url(#orbit-arrow)"
+              />
+              <path
+                d="M60.5 28.5c12 3.7 12.5 11.2 2 16.3"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
+          <span className="mt-1 max-w-[8em] text-[0.6rem] font-medium uppercase leading-snug tracking-[0.08em] text-fg-muted">
             {badge.label}
           </span>
         </Reveal>
@@ -87,42 +135,28 @@ export function TrustBand({
         className="mt-12"
       />
 
-      <div className="relative z-10 mx-auto -mt-4 w-52 sm:absolute sm:left-1/2 sm:top-1/2 sm:mt-0 sm:w-64 sm:-translate-x-1/2 sm:-translate-y-1/2">
+      <div className="relative z-10 mx-auto -mt-4 w-[19rem] sm:absolute sm:left-1/2 sm:top-1/2 sm:mt-0 sm:w-96 sm:-translate-x-1/2 sm:-translate-y-1/2">
         <Reveal distance={60} amount={0.1}>
           <AnimatePresence mode="wait" initial={false}>
-            <motion.figure
+            <motion.div
               key={slide.id}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={springMove}
-              className="palette-ground relative aspect-[3/4] rotate-6 overflow-hidden rounded-[var(--radius)]"
-              style={
-                {
-                  "--c1": `${slide.palette[0]}cc`,
-                  "--c2": `${slide.palette[1]}aa`,
-                  "--c3": slide.palette[2],
-                } as CSSProperties
-              }
+              className="relative aspect-[1.15/1]"
             >
-              {slide.photo ? (
-                <Image
-                  src={slide.photo}
-                  alt=""
-                  fill
-                  sizes="(max-width: 640px) 60vw, 22rem"
-                  className="object-cover"
-                />
-              ) : null}
-              <span
-                aria-hidden
-                className="palette-mesh absolute inset-0 mix-blend-multiply"
+              <TrustCard
+                slide={slide}
+                photo={slide.backPhoto ?? slide.photo}
+                className="absolute left-0 top-[46%] z-0 w-[64%] -translate-y-1/2 -rotate-[16deg] opacity-90"
               />
-              <figcaption className="absolute inset-x-3 bottom-3 rounded-[var(--radius-sm)] bg-[rgb(0_0_0/0.5)] px-3 py-2 text-white backdrop-blur-md">
-                <b className="block text-sm font-medium">{slide.name}</b>
-                <span className="block text-[0.65rem] opacity-80">{slide.role}</span>
-              </figcaption>
-            </motion.figure>
+              <TrustCard
+                slide={slide}
+                showCaption
+                className="absolute right-0 top-1/2 z-10 w-[64%] -translate-y-1/2 rotate-6 shadow-lg"
+              />
+            </motion.div>
           </AnimatePresence>
         </Reveal>
       </div>
@@ -147,6 +181,47 @@ export function TrustBand({
         />
       </div>
     </section>
+  );
+}
+
+function TrustCard({
+  slide,
+  photo = slide.photo,
+  showCaption = false,
+  className,
+}: {
+  slide: TrustSlide;
+  photo?: string;
+  showCaption?: boolean;
+  className: string;
+}) {
+  return (
+    <figure
+      className={`palette-ground aspect-[3/4] overflow-hidden rounded-[var(--radius)] ${className}`}
+      style={
+        {
+          "--c1": `${slide.palette[0]}cc`,
+          "--c2": `${slide.palette[1]}aa`,
+          "--c3": slide.palette[2],
+        } as CSSProperties
+      }
+    >
+      {photo ? (
+        <Image
+          src={photo}
+          alt=""
+          fill
+          sizes="(max-width: 640px) 58vw, 15rem"
+          className="object-cover"
+        />
+      ) : null}
+      {showCaption ? (
+        <figcaption className="absolute inset-x-3 bottom-3 rounded-[var(--radius-sm)] bg-[rgb(0_0_0/0.5)] px-3 py-2 text-white backdrop-blur-md">
+          <b className="block text-sm font-medium">{slide.name}</b>
+          <span className="block text-[0.65rem] opacity-80">{slide.role}</span>
+        </figcaption>
+      ) : null}
+    </figure>
   );
 }
 

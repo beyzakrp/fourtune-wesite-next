@@ -161,10 +161,10 @@ const tr: Dictionary = {
     eyebrow: "Seçilmiş işler",
     title: "Yaptıklarımız ve nedenleri.",
     lead: "Kısa bir seçki. Her biri, çoğu vaka çalışmasının atladığı kısmı da içeriyor: doğruyu bulmadan önce neyi yanlış yaptığımızı.",
-    viewAll: "Tüm işler",
+    viewAll: "Tüm İşler",
     viewCase: "Vakayı oku",
-    allProjects: "Tüm projeler",
-    nextProject: "Sonraki proje",
+    allProjects: "Tüm Projeler",
+    nextProject: "Sonraki Proje",
     backToWork: "İşlere dön",
     labels: {
       client: "Müşteri",
@@ -235,6 +235,8 @@ const tr: Dictionary = {
 
   studio: {
     eyebrow: "Stüdyo",
+    previewEyebrow: "Ekibimiz",
+    previewTitle: "Bizim hikayemiz",
     title: "Yönetmektense yapmayı seçen dokuz kişi.",
     lead: "Fourtune 2014'te Bomonti'de tek odalı bir ofiste başladı. Yavaş ve bilerek büyüdük — ciddi iş çıkaracak kadar kalabalık, herkesin herkesin ne yaptığını bileceği kadar az.",
     body: [

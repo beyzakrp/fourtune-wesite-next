@@ -2,14 +2,18 @@ import { notFound } from "next/navigation";
 import { isLocale } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
 import { featuredProjects, projects } from "@/lib/content/projects";
-import { projectPhotos } from "@/lib/content/photos";
+import {
+  homeHeroCarouselPhotos,
+  homeStoryPhoto,
+  homeTrustPhotos,
+} from "@/lib/content/photos";
 import { site } from "@/lib/site";
 
 import { Hero } from "@/components/sections/hero";
 import { Showreel } from "@/components/sections/showreel";
 import { TrustBand } from "@/components/sections/trust-band";
 import { ProgramList } from "@/components/sections/program-list";
-import { FacilitiesBlock } from "@/components/sections/facilities-block";
+import { StoryPreview } from "@/components/sections/story-preview";
 import { StatsBand } from "@/components/sections/stats-band";
 import { Testimonials } from "@/components/sections/testimonials";
 import { Process } from "@/components/sections/process";
@@ -27,14 +31,15 @@ export default async function HomePage({
   if (!isLocale(locale)) notFound();
   const dict = await getDictionary(locale);
   const base = `/${locale}`;
+  const showBrandStrip = false;
 
-  /* Both carousels and the tile pair read from the same project list, so
-     nothing on this page is invented content that would drift from /work. */
+  /* The sections share project metadata but own separate photography maps, so
+     replacing an image in one composition cannot silently change another. */
   const heroSlides = featuredProjects.map((p) => ({
     id: p.id,
     palette: p.palette,
     mark: p.mark,
-    photo: projectPhotos[p.id].src,
+    photo: homeHeroCarouselPhotos[p.id]?.src,
     eyebrow: dict.projects[p.id].client,
     title: dict.projects[p.id].category,
     cta: dict.work.viewCase,
@@ -45,20 +50,10 @@ export default async function HomePage({
     id: p.id,
     palette: p.palette,
     mark: p.mark,
-    photo: projectPhotos[p.id].src,
+    photo: homeTrustPhotos[p.id]?.front.src,
+    backPhoto: homeTrustPhotos[p.id]?.back.src,
     name: dict.projects[p.id].client,
     role: dict.projects[p.id].category,
-  }));
-
-  const tiles = featuredProjects.slice(0, 2).map((p, i) => ({
-    id: p.id,
-    href: `${base}/work/${p.slug}`,
-    palette: p.palette,
-    mark: p.mark,
-    photo: projectPhotos[p.id].src,
-    name: dict.projects[p.id].title,
-    description: dict.projects[p.id].summary,
-    tone: (i === 0 ? "warm" : "cool") as "warm" | "cool",
   }));
 
   const programRows = dict.services.items.slice(0, 4).map((item, i) => ({
@@ -92,21 +87,23 @@ export default async function HomePage({
       <TrustBand
         label={dict.ghost.label}
         sets={dict.ghost.sets}
-        badge={{ value: "100%", label: dict.intro.eyebrow }}
+        badge={{ value: "360°", label: "360° Marketing" }}
         card={{ index: "#01", title: dict.intro.title, body: dict.intro.body }}
         slides={trustSlides}
         previousLabel={dict.a11y.previous}
         nextLabel={dict.a11y.next}
       />
 
-      <section aria-label={dict.marquee.label} className="band-soft mt-3 py-10">
-        <VelocityMarquee
-          items={dict.marquee.items}
-          itemClassName="mx-8 type-h3 text-fg-muted md:mx-12"
-          pauseLabel={dict.a11y.pauseMarquee}
-          playLabel={dict.a11y.playMarquee}
-        />
-      </section>
+      {showBrandStrip ? (
+        <section aria-label={dict.marquee.label} className="band-soft mt-3 py-10">
+          <VelocityMarquee
+            items={dict.marquee.items}
+            itemClassName="mx-8 type-h3 text-fg-muted md:mx-12"
+            pauseLabel={dict.a11y.pauseMarquee}
+            playLabel={dict.a11y.playMarquee}
+          />
+        </section>
+      ) : null}
 
       {/* Programs */}
       <section
@@ -125,24 +122,21 @@ export default async function HomePage({
         </Reveal>
       </section>
 
-      {/* Facilities — overlaps up onto the surface above, so the rounded top
-          edge reads as a reveal rather than a seam. */}
+      {/* A compact introduction to the studio, with the full story one level
+          deeper on its own page. */}
       <section
-        id="work"
-        className="-mt-10 rounded-[var(--radius-lg)] bg-bg section-x pb-20 pt-16"
+        id="story"
+        className="-mt-10 overflow-hidden rounded-[var(--radius-lg)] bg-bg section-x py-20 md:py-28"
+        style={{ marginTop: "30px" }}
       >
-        <FacilitiesBlock
-          titleLines={splitLines(dict.work.title)}
-          body={dict.work.lead}
-          tiles={tiles}
-          markPalette={featuredProjects[0].palette}
-          markPhoto={projectPhotos[featuredProjects[2].id].src}
+        <StoryPreview
+          eyebrow={dict.studio.previewEyebrow}
+          titleLines={[dict.studio.previewTitle]}
+          body={dict.studio.lead}
+          image={homeStoryPhoto}
+          href={`${base}/studio`}
+          action={dict.nav.studio}
         />
-        <Reveal className="mt-12">
-          <ButtonLink href={`${base}/work`} variant="secondary">
-            {dict.work.viewAll}
-          </ButtonLink>
-        </Reveal>
       </section>
 
       <div className="band-soft mt-3 section-x py-20">

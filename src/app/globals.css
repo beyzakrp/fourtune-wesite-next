@@ -925,6 +925,15 @@
     will-change: transform;
   }
 
+  /* Instrument Serif's italic descenders and final overhang extend beyond the
+     reveal mask. Reserve that glyph space only for the story preview title. */
+  .story-preview-title .sw-word {
+    padding-right: 0.14em;
+    padding-bottom: 0.2em;
+    margin-right: -0.14em;
+    margin-bottom: -0.2em;
+  }
+
   .facility-cap-warm {
     background-color: rgb(0 0 0 / 0.55);
   }

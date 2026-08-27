@@ -234,6 +234,8 @@ const fr: Dictionary = {
 
   studio: {
     eyebrow: "Le studio",
+    previewEyebrow: "Notre équipe",
+    previewTitle: "Notre histoire",
     title: "Neuf personnes qui préfèrent faire que gérer.",
     lead: "Fourtune a commencé en 2014 dans un bureau d'une pièce à Bomonti. Nous avons grandi lentement et volontairement — assez nombreux pour du travail sérieux, assez peu pour que chacun sache ce que font les autres.",
     body: [

@@ -9,6 +9,8 @@ const nextConfig: NextConfig = {
        arrives — nothing else references the host. */
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
+      { protocol: "https", hostname: "i.pinimg.com", pathname: "/1200x/**" },
+      { protocol: "https", hostname: "i.pinimg.com", pathname: "/736x/**" },
     ],
   },
   turbopack: {
