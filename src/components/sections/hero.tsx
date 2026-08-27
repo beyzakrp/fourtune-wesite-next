@@ -54,8 +54,8 @@ export function Hero({
   copy,
   workHref,
   contactHref,
-  slides,
-  slidesLabel,
+  // slides,
+  //slidesLabel,
   stat,
 }: {
   copy: HeroCopy;
@@ -187,13 +187,15 @@ export function Hero({
             </motion.div>
           </div>
 
-          <div className="hidden items-end gap-4 md:flex">
+          {/*<div className="hidden items-end gap-4 md:flex">
             <motion.div
               initial={{ opacity: 0, y: 28 }}
               animate={introReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
               transition={{ ...springMove, delay: 0.65 }}
             >
-              <GlassCarousel slides={slides} label={slidesLabel} gated={!introReady} />
+             
+             <GlassCarousel slides={slides} label={slidesLabel} gated={!introReady} />
+              
             </motion.div>
 
             <motion.article
@@ -218,9 +220,10 @@ export function Hero({
                 </div>
               </div>
             </motion.article>
-          </div>
+          </div>*/} 
         </div>
       </motion.div>
+      
 
       <motion.button
         type="button"
