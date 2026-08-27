@@ -242,15 +242,19 @@ const en = {
 
   studio: {
     eyebrow: "The studio",
-    previewEyebrow: "Team",
-    previewTitle: "Our story",
+    previewEyebrow: "TEAM",
+    previewTitle: "Our Story",
     previewAction: "Let’s get to know each other",
-    title: "Nine people who would rather make than manage.",
-    lead: "Fourtune started in 2014 in a one-room office in Bomonti. We have grown slowly and on purpose — enough people to do serious work, few enough that everyone knows what everyone else is doing.",
+    title: "4 minds. One focus: **you**.",
+    lead: "Fourtune started with four people, a shared vision, and the belief that every brand has a **unique story** waiting to be heard.",
     body: [
-      "We are strategists, designers and engineers who got tired of the hand-off. The person who framed the problem is in the room when it gets built, which removes an entire category of translation loss.",
-      "We take four to six engagements a year. That number is a constraint we chose, not a limit we ran into — it is what lets us give each project the attention it needs and still be home for dinner.",
-      "The studio is independent and intends to stay that way. No holding company, no growth targets set by someone who has never met our clients.",
+      "Before becoming a team, as colleagues working side by side, we realized that the secret behind our success was not only our individual skills, but also the way we challenged each other to become better versions of ourselves and our ability to transform ideas into impactful solutions.",
+      "This realization planted the seed of creating an agency of our own.",
+      "The name 4tune represents who we are: four people who think alike, bring different strengths together, and believe that **passion** has no limits when it comes to the work we create. Inspired by the idea of finding the tune of branding, we help businesses discover their unique voice and build meaningful connections.",
+      "At 4tune, we don’t believe in one-size-fits-all solutions. Our role is to work as an extension of your team, listen to your story, understand your goals, and communicate your brand with an authentic voice that reaches the right people and creates real results.",
+      "By bringing together different areas of expertise, we combine strategic thinking, creativity, technology, and a deep understanding of people to help brands grow and stand out in an ever-changing digital world.",
+      "For us, marketing is not just about being visible. It is about creating meaningful connections, building trust, and leaving a lasting impact. Whether you are building your identity, strengthening your presence, or looking for new ways to connect with your audience, we are here to help you find your brand’s true tune.",
+      "**4tune. Find the tune of your branding.**",
     ],
     valuesTitle: "How we work",
     values: [

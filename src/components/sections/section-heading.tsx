@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/motion/reveal";
+import { EmphasizedCopy } from "@/components/ui/emphasized-copy";
 
 export function SectionHeading({
   eyebrow,
@@ -45,24 +46,49 @@ export function PageIntro({
   eyebrow,
   title,
   lead,
+  titleStyle = "default",
+  contentPosition = "default",
 }: {
   eyebrow: string;
   title: string;
-  lead: string;
+  lead?: string;
+  titleStyle?: "default" | "editorial";
+  contentPosition?: "default" | "lower";
 }) {
   return (
-    <section className="band section-x pb-16 pt-[calc(var(--header-h)+5rem)] md:pb-24 md:pt-[calc(var(--header-h)+7rem)]">
+    <section
+      className={`band section-x ${
+        contentPosition === "lower"
+          ? "pb-24 pt-[calc(var(--header-h)+9rem)] md:pb-32 md:pt-[calc(var(--header-h)+13rem)]"
+          : "pb-16 pt-[calc(var(--header-h)+5rem)] md:pb-24 md:pt-[calc(var(--header-h)+7rem)]"
+      }`}
+    >
       <Reveal>
         <p className="type-eyebrow text-[rgb(255_255_255/0.7)]">{eyebrow}</p>
       </Reveal>
       <Reveal index={1}>
-        <h1 className="mt-5 max-w-[18ch] type-h1 text-balance">{title}</h1>
+        <h1
+          className={`mt-5 max-w-[18ch] text-balance ${
+            titleStyle === "editorial"
+              ? "text-[clamp(4.25rem,9vw,8rem)] font-normal leading-[0.9] tracking-[-0.035em] normal-case italic"
+              : "type-h1"
+          }`}
+          style={
+            titleStyle === "editorial"
+              ? { fontFamily: "var(--font-instrument)" }
+              : undefined
+          }
+        >
+          <EmphasizedCopy text={title} />
+        </h1>
       </Reveal>
-      <Reveal index={2}>
-        <p className="mt-7 max-w-[52ch] type-lead text-[rgb(255_255_255/0.8)]">
-          {lead}
-        </p>
-      </Reveal>
+      {lead ? (
+        <Reveal index={2}>
+          <p className="mt-7 max-w-[52ch] type-lead text-[rgb(255_255_255/0.8)]">
+            <EmphasizedCopy text={lead} />
+          </p>
+        </Reveal>
+      ) : null}
     </section>
   );
 }

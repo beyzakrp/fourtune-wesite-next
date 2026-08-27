@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Reveal } from "@/components/motion/reveal";
 import { SplitWords } from "@/components/motion/split-words";
 import { ButtonLink } from "@/components/ui/button";
+import { EmphasizedCopy } from "@/components/ui/emphasized-copy";
 import type { Photo } from "@/lib/content/photos";
 
 /** A compact route into the full Our Story page. */
@@ -47,7 +48,9 @@ export function StoryPreview({
           </h2>
 
           <Reveal delay={0.18}>
-            <p className="mt-6 max-w-[48ch] type-body text-fg-muted">{body}</p>
+            <p className="mt-6 max-w-[48ch] type-body text-fg-muted">
+              <EmphasizedCopy text={body} />
+            </p>
           </Reveal>
 
           <Reveal delay={0.26} className="mt-8">

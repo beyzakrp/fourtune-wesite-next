@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { isLocale, locales } from "@/lib/i18n/config";
 import { getDictionary } from "@/lib/i18n/get-dictionary";
-import { site } from "@/lib/site";
 
 import { PageIntro } from "@/components/sections/section-heading";
 import { Reveal } from "@/components/motion/reveal";
-import { CountUp } from "@/components/motion/count-up";
-import { TiltCard } from "@/components/motion/tilt-card";
+import {
+  EmphasizedCopy,
+  stripEmphasis,
+} from "@/components/ui/emphasized-copy";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -21,7 +23,10 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const dict = await getDictionary(locale);
-  return { title: dict.nav.studio, description: dict.studio.lead };
+  return {
+    title: dict.nav.studio,
+    description: stripEmphasis(dict.studio.lead),
+  };
 }
 
 export default async function StudioPage({
@@ -36,22 +41,45 @@ export default async function StudioPage({
   return (
     <>
       <PageIntro
-        eyebrow={dict.studio.eyebrow}
-        title={dict.studio.title}
-        lead={dict.studio.lead}
+        eyebrow={dict.studio.previewEyebrow}
+        title={dict.studio.previewTitle}
+        titleStyle="editorial"
+        contentPosition="lower"
       />
 
-      <section className="container-page py-20 md:py-28">
-        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+      <section className="container-page"
+      style={{
+        marginTop: "5rem",
+      }}>
+        <div className="mx-auto max-w-[120ch] space-y-8 md:space-y-10">
+          <Reveal>
+            <h2 className="type-h2 max-w-[18ch] text-balance normal-case">
+              <EmphasizedCopy text={dict.studio.title} accent />
+            </h2>
+          </Reveal>
+          <Reveal index={1}>
+            <p className="type-lead text-fg-secondary">
+              <EmphasizedCopy text={dict.studio.lead} accent />
+            </p>
+          </Reveal>
           {dict.studio.body.map((paragraph, i) => (
-            <Reveal key={i} index={i}>
-              <p className="max-w-[52ch] type-lead text-fg-secondary">
-                {paragraph}
+            <Reveal key={i} index={i + 2}>
+              <p className="type-lead text-fg-secondary">
+                <EmphasizedCopy text={paragraph} accent />
               </p>
             </Reveal>
           ))}
+          <Image
+            src="/images/Our-Team-Signature.png"
+            alt=""
+            width={9588}
+            height={3929}
+            sizes="18rem"
+            className="block h-auto w-full max-w-[18rem]"
+          />
         </div>
 
+{/* Stats
         <dl className="mt-20 grid grid-cols-2 gap-x-6 gap-y-10 border-t border-line pt-12 md:grid-cols-4">
           {dict.intro.stats.map((stat, i) => (
             <Reveal key={stat.label} index={i}>
@@ -65,8 +93,11 @@ export default async function StudioPage({
             </Reveal>
           ))}
         </dl>
+*/}
       </section>
 
+
+{/*
       <section className="container-page border-t border-line py-20 md:py-28">
         <Reveal>
           <h2 className="type-h2">{dict.studio.valuesTitle}</h2>
@@ -114,7 +145,26 @@ export default async function StudioPage({
           </address>
         </Reveal>
       </section>
+*/}
 
+      <section
+        aria-hidden
+        className="flex justify-end bg-white"
+        style={{
+          marginBottom: "calc(0px - var(--page-inset) - 0.75rem)",
+          marginTop: "-15rem",
+        }}
+      >
+
+        <Image
+          src="/images/happy-team-drawing.svg"
+          alt=""
+          width={776}
+          height={449}
+          className="flex h-auto w-full max-w-[35rem]"
+        />
+
+      </section>
     </>
   );
 }
