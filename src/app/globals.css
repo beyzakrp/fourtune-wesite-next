@@ -48,6 +48,7 @@
 
   --fg: #000000;
   --fg-secondary: #3d3d3d;
+  --menu-fg: #3d3d3d;
   --fg-muted: #6e6e6e;
   --fg-onaccent: #ffffff;
 
@@ -179,6 +180,7 @@
 
   --fg: #ffffff;
   --fg-secondary: #c9c9c9;
+  --menu-fg: #3d3d3d;
   --fg-muted: #8a8a8a;
   --fg-onaccent: #ffffff;
 
@@ -652,7 +654,7 @@
   .sh-link {
     display: grid;
     position: relative;
-    color: var(--fg-secondary);
+    color: var(--menu-fg);
     transition: color 200ms var(--ease-out);
   }
 
@@ -978,7 +980,7 @@
 }
 
 .sh-root[data-scrolled="true"] .sh-link {
-  color: var(--fg-secondary);
+  color: var(--menu-fg);
 }
 
 .sh-root[data-scrolled="true"] :is(.sh-link:hover, .sh-link[aria-current="page"]) {
@@ -1055,6 +1057,7 @@
   :root {
     --fg-muted: #3b4470;
     --fg-secondary: #212c5e;
+    --menu-fg: var(--fg-secondary);
     --line: rgb(0 0 0 / 0.5);
     --accent: var(--accent-ink);
     --material-thick: var(--bg);
@@ -1065,6 +1068,7 @@
   [data-theme="dark"] {
     --fg-muted: #d5d8e6;
     --fg-secondary: #f7f4ef;
+    --menu-fg: var(--fg-secondary);
     --line: rgb(255 255 255 / 0.48);
     --accent: var(--accent-ink);
     --material-thick: var(--bg);

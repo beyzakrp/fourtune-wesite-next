@@ -23,7 +23,8 @@ const variants: Record<Variant, string> = {
   /* For use on a dark band, where the page's own accent would sink into it. */
   light: "bg-white text-band hover:bg-accent hover:text-white",
   /* Clear glass for controls placed directly over photography. */
-  glass: "glass-panel text-fg-secondary hover:bg-white/25",
+  glass:
+    "glass-panel text-fg-secondary hover:bg-white/25 dark:bg-black/30 dark:hover:bg-black/45",
 };
 
 const sizes: Record<Size, string> = {
