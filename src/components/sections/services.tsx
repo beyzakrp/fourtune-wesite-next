@@ -14,9 +14,9 @@ type ServiceItem = {
 };
 
 /**
- * Disclosure rows rather than a card grid: six cards would flatten the
- * hierarchy, and the summary is what most readers need. The detail is one
- * level deeper, where it belongs.
+ * Disclosure rows rather than a card grid: a broad service list would flatten
+ * the hierarchy as cards, and the summary is what most readers need. The
+ * detail is one level deeper, where it belongs.
  *
  * Height is animated by Motion's layout engine, so opening a second row while
  * the first is still closing re-targets both springs from wherever they are.

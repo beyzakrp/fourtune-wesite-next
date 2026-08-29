@@ -127,7 +127,7 @@ export default async function HomePage({
           <ProgramList rows={programRows} />
           <Reveal className="mt-12">
             <ButtonLink href={`${base}/services`} variant="secondary">
-              {dict.nav.services}
+              {dict.services.viewAll}
             </ButtonLink>
           </Reveal>
         </div>
@@ -158,7 +158,7 @@ export default async function HomePage({
           steps={dict.process.steps}
         />
       </div>
-
+        {/*
       <StatsBand
         eyebrow={dict.intro.eyebrow}
         titleLines={splitLines(dict.intro.title)}
@@ -170,6 +170,7 @@ export default async function HomePage({
         title={dict.testimonials.title}
         items={dict.testimonials.items}
       />
+      */}
     </>
   );
 }

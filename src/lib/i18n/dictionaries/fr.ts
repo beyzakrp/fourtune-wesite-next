@@ -79,6 +79,7 @@ const fr: Dictionary = {
     eyebrow: "Ce que nous faisons",
     title: "Six disciplines, une équipe.",
     lead: "La plupart des studios vous font passer d'un service à l'autre. Nous gardons stratégie, design et développement dans la même pièce — c'est pourquoi ce que nous montrons est ce que vous recevez.",
+    viewAll: "Tous les services",
     deliverablesLabel: "Comprend",
     items: [
       {
@@ -340,7 +341,7 @@ const fr: Dictionary = {
     socialTitle: "Ailleurs",
     contactTitle: "Contact",
     rights: "Tous droits réservés.",
-    colophon: "Conçu et développé en interne. Typographie : SF Pro et Inter.",
+    colophon: "",
     backToTop: "Haut de page",
     localeTitle: "Langue",
   },
@@ -479,7 +480,7 @@ const fr: Dictionary = {
 
   notFound: {
     title: "Opsss....",
-    body: "Le lien est mort, pas le travail. Jetez plutôt un œil aux projets choisis du studio.",
+    body: "Le lien est mort, pas le travail. Jetez plutôt un œil aux projets choisis du agency.",
     action: "Retour à l'accueil",
   },
 };

@@ -16,6 +16,16 @@ import { Parallax } from "@/components/motion/parallax";
 import { CountUp } from "@/components/motion/count-up";
 import { ButtonLink } from "@/components/ui/button";
 
+/** Keep existing case-study taxonomy compatible with the new service names. */
+const serviceIdAliases: Record<string, string> = {
+  strategy: "digital-strategy",
+  identity: "branding-campaign",
+  product: "web-digital-experience",
+  engineering: "web-digital-experience",
+  motion: "creative-content",
+  campaign: "branding-campaign",
+};
+
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
     projects.map((project) => ({ locale, slug: project.slug })),
@@ -53,7 +63,12 @@ export default async function ProjectPage({
   const nextCopy = dict.projects[next.id];
 
   const disciplineNames = project.disciplines
-    .map((id) => dict.services.items.find((item) => item.id === id)?.title)
+    .map(
+      (id) =>
+        dict.services.items.find(
+          (item) => item.id === id || item.id === serviceIdAliases[id],
+        )?.title,
+    )
     .filter(Boolean) as string[];
 
   return (

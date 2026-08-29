@@ -79,6 +79,7 @@ const de: Dictionary = {
     eyebrow: "Was wir tun",
     title: "Sechs Disziplinen, ein Team.",
     lead: "Die meisten Studios reichen Sie zwischen Abteilungen weiter. Wir halten Strategie, Design und Entwicklung im selben Raum — deshalb ist das, was wir zeigen, auch das, was Sie bekommen.",
+    viewAll: "Alle Leistungen",
     deliverablesLabel: "Enthält",
     items: [
       {
@@ -340,7 +341,7 @@ const de: Dictionary = {
     socialTitle: "Anderswo",
     contactTitle: "Kontakt",
     rights: "Alle Rechte vorbehalten.",
-    colophon: "Im Haus gebaut. Schrift: SF Pro und Inter.",
+    colophon: "",
     backToTop: "Nach oben",
     localeTitle: "Sprache",
   },
