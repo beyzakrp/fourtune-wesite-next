@@ -478,7 +478,7 @@ const de: Dictionary = {
   },
 
   notFound: {
-    title: "Diese Seite ist weitergezogen.",
+    title: "Opsss....",
     body: "Der Link ist tot, die Arbeit nicht. Sehen Sie sich stattdessen die ausgewählten Projekte an.",
     action: "Zurück zur Startseite",
   },

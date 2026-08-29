@@ -483,7 +483,7 @@ const en = {
   },
 
   notFound: {
-    title: "This page moved on.",
+    title: "Opsss....",
     body: "The link is dead, but the work is not. Try the studio's selected projects instead.",
     action: "Back to home",
   },

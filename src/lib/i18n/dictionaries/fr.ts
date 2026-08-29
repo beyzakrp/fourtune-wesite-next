@@ -478,7 +478,7 @@ const fr: Dictionary = {
   },
 
   notFound: {
-    title: "Cette page a filé.",
+    title: "Opsss....",
     body: "Le lien est mort, pas le travail. Jetez plutôt un œil aux projets choisis du studio.",
     action: "Retour à l'accueil",
   },

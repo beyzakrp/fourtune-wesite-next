@@ -483,7 +483,7 @@ const tr: Dictionary = {
   },
 
   notFound: {
-    title: "Bu sayfa yoluna devam etti.",
+    title: "Opsss....",
     body: "Bağlantı ölmüş olabilir ama işler duruyor. Stüdyonun seçilmiş projelerine göz atın.",
     action: "Ana sayfaya dön",
   },
