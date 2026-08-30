@@ -12,7 +12,7 @@ export const site = {
   legalName: "Fourtune Agency",
   /** Stays English in every locale — brand rule, not an oversight. */
   tagline: "AGENCY • FIND THE TUNE OF BRANDING",
-  domain: "www.fourtuneagency.com",
+  domain: "fourtuneagency.com",
   email: "hello@fourtuneagency.com",
   phone: "+90 540 520 52 01",
   address: {
