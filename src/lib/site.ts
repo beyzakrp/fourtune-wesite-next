@@ -12,19 +12,34 @@ export const site = {
   legalName: "Fourtune Agency",
   /** Stays English in every locale — brand rule, not an oversight. */
   tagline: "AGENCY • FIND THE TUNE OF BRANDING",
-  domain: "4tune.agency",
-  email: "hello@4tune.agency",
-  phone: "+90 212 000 00 00",
+  domain: "www.fourtuneagency.com",
+  email: "hello@fourtuneagency.com",
+  phone: "+90 540 520 52 01",
   address: {
-    street: "Bomonti, Silahşör Cd. 42",
+    street: " Kolektif House Esentepe Mahallesi Talatpaşa Caddesi No: 5 / 1 Levent 34394 Şişli/İstanbul",
     city: "İstanbul",
     country: "TR",
   },
   social: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "Behance", href: "https://behance.net" },
-    { label: "Dribbble", href: "https://dribbble.com" },
+    {
+      label: "Instagram",
+      href: "https://instagram.com",
+      icon: "/images/instagram.svg",
+    },
+    { label: "TikTok", href: "https://tiktok.com", icon: "/images/tiktok.svg" },
+    {
+      label: "LinkedIn",
+      href: "https://linkedin.com",
+      icon: "/images/linkedin.svg",
+    },
+    { label: "Behance", href: "https://behance.net", icon: "/images/behance.svg" },
+    {
+      label: "Pinterest",
+      href: "https://pinterest.com",
+      icon: "/images/pinterest.svg",
+    },
+    { label: "Dribbble", href: "https://dribbble.com", icon: "/images/dribble.svg" },
+    { label: "Figma", href: "https://figma.com", icon: "/images/figma.svg" },
   ],
   media: {
     /* 1920×1080, 32.8s, H.264 + AAC. Still needs a compression pass — see the

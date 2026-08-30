@@ -544,7 +544,7 @@
 /* A dark full-width band laid on the white page. The page inset around
    <main> is what turns its corners into a card edge. */
 @utility band {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   background: var(--band);
   color: var(--band-fg);
 }
