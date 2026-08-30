@@ -23,7 +23,7 @@ export function Footer({
   const footerNav = navItems.filter((item) => item.key !== "home");
 
   return (
-    <footer className={`band mt-3 ${styles.footer}`}>
+    <footer className={`mt-3 ${styles.footer}`}>
       <div className={styles.content}>
         <nav aria-label={dict.footer.navTitle}>
           <ul className={styles.navigation}>

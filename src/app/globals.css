@@ -542,9 +542,10 @@
 }
 
 /* A dark full-width band laid on the white page. The page inset around
-   <main> is what turns its corners into a card edge. */
+   <main> is what turns all four corners into a card edge. The footer owns its
+   top-only radius separately because it visually continues to the page edge. */
 @utility band {
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-radius: var(--radius-lg);
   background: var(--band);
   color: var(--band-fg);
 }

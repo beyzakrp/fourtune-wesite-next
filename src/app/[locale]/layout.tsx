@@ -160,8 +160,8 @@ export default async function LocaleLayout({
             {children}
           </main>
 
-          {/* The footer is a band like any other, so it needs the same page
-              inset — but not a second top gap, which `mt-3` already provides. */}
+          {/* The footer uses the same page inset as the bands, but keeps only
+              its top corners rounded so its bottom meets the page edge. */}
           <div className="p-[var(--page-inset)] pt-0">
             <Footer locale={typedLocale} dict={dict} />
           </div>
