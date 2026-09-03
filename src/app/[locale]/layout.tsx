@@ -14,6 +14,7 @@ import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { ThemeScript } from "@/components/site/theme-script";
+import { Analytics } from "@vercel/analytics/next";
 
 /**
  * The real brand faces, self-hosted from `src/fonts/`.
@@ -166,6 +167,7 @@ export default async function LocaleLayout({
             <Footer locale={typedLocale} dict={dict} />
           </div>
         </MotionProvider>
+        <Analytics />
       </body>
     </html>
   );
