@@ -44,10 +44,7 @@ export const heroPhoto: Photo = {
 
 /** Project listing and case-study covers. */
 export const projectPhotos: Record<ProjectId, Photo> = {
-  aurora: {
-    src: `https://i.pinimg.com/1200x/d8/ed/af/d8edafa7434d888a7dccced9ebaf6500.jpg`,
-    alt: "Turned off flat screen monitors on top of beige desks",
-  },
+  "be-oddly": { src: "/portfolios/be-oddly/be-oddly-content-logo-branding.png", alt: "Be Oddly" },
   atlas: {
     src: `https://i.pinimg.com/736x/28/86/7d/28867d4b89876ed649b1ea8ced422f69.jpg`,
     alt: "Person lettering on tracing paper using a mechanical pencil",
@@ -75,10 +72,7 @@ export const projectPhotos: Record<ProjectId, Photo> = {
  * slides point to the same projects as the work section.
  */
 export const homeHeroCarouselPhotos: Partial<Record<ProjectId, Photo>> = {
-  aurora: {
-    src: "https://i.pinimg.com/1200x/99/ab/0b/99ab0bde2a229d71b44780b4aad5308d.jpg",
-    alt: "Office interior with desks and large windows",
-  },
+  "be-oddly": { src: "/portfolios/be-oddly/be-oddly-content-logo-branding.png", alt: "Be Oddly" },
   atlas: {
     src: "https://i.pinimg.com/736x/6c/37/26/6c3726946a34d898522d58dcdcd9ce68.jpg",
     alt: "Bright creative office with shared work tables",
@@ -93,16 +87,7 @@ export const homeHeroCarouselPhotos: Partial<Record<ProjectId, Photo>> = {
 export const homeTrustPhotos: Partial<
   Record<ProjectId, { front: Photo; back: Photo }>
 > = {
-  aurora: {
-    front: {
-      src: "https://i.pinimg.com/1200x/d8/ed/af/d8edafa7434d888a7dccced9ebaf6500.jpg",
-      alt: "Creative team gathered around a table",
-    },
-    back: {
-      src: "https://i.pinimg.com/1200x/99/ab/0b/99ab0bde2a229d71b44780b4aad5308d.jpg",
-      alt: "Secondary campaign visual for Aurora",
-    },
-  },
+  "be-oddly": { front: { src: "/portfolios/be-oddly/be-oddly-content-logo-branding.png", alt: "Be Oddly" }, back: { src: "/portfolios/be-oddly/be-oddly-content-1.png", alt: "Be Oddly" } },
   atlas: {
     front: {
       src: "https://i.pinimg.com/736x/28/86/7d/28867d4b89876ed649b1ea8ced422f69.jpg",

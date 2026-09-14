@@ -2,6 +2,13 @@ import path from "node:path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [{
+      source: "/:locale/work/aurora-banking",
+      destination: "/:locale/work/be-oddly",
+      permanent: true,
+    }];
+  },
   images: {
     /* Placeholder photography. Every one of these was fetched and decoded
        before being written down, so none of them is a guessed id. Swap the

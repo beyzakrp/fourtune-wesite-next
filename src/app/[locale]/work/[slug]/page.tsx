@@ -1,4 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import beOddly1 from "../../../../../public/portfolios/be-oddly/be-oddly-content-1.png";
+import beOddly2 from "../../../../../public/portfolios/be-oddly/be-oddly-content-2.png";
+import beOddly3 from "../../../../../public/portfolios/be-oddly/be-oddly-content-3.png";
+import beOddly4 from "../../../../../public/portfolios/be-oddly/be-oddly-content-4.png";
+import beOddly5 from "../../../../../public/portfolios/be-oddly/be-oddly-content-5.png";
+import beOddly6 from "../../../../../public/portfolios/be-oddly/be-oddly-content-6.png";
+import beOddlyBrand from "../../../../../public/portfolios/be-oddly/be-oddly-content-logo-branding.png";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -99,6 +107,22 @@ export default async function ProjectPage({
         </Reveal>
       </header>
 
+      {project.id === "be-oddly" ? (
+        <div className="container-page pb-16 md:pb-24">
+          <dl className="mb-10 grid gap-6 sm:grid-cols-2">
+            <MetaItem label={dict.work.labels.client} value={copy.client} />
+            <MetaItem label={dict.work.labels.disciplines} value={disciplineNames.join(", ")} />
+          </dl>
+          <div className="grid items-start gap-4 sm:grid-cols-2 md:gap-6">
+            {[beOddlyBrand, beOddly1, beOddly2, beOddly3, beOddly4, beOddly5, beOddly6].map((photo, index) => (
+              <Reveal key={photo.src} className={index === 6 ? "sm:col-span-2 sm:mx-auto sm:w-1/2" : undefined}>
+                <Image src={photo} alt={`Be Oddly — ${copy.category} (${index + 1})`} sizes="(max-width: 639px) 100vw, 50vw" className="h-auto w-full rounded-[var(--radius)]" />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      ) : (
+      <>
       <div className="container-page">
         <Reveal amount={0.1}>
           {/* The cover drifts against the page as it passes — a depth cue that
@@ -160,6 +184,9 @@ export default async function ProjectPage({
           </Reveal>
         </div>
       </div>
+
+      </>
+      )}
 
       <section className="border-t border-line">
         <Link

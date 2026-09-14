@@ -58,7 +58,7 @@ export function ProjectCover({
 
       {/* The palette wash, multiplied over the photograph so the colour reads
           as light in the room rather than as a filter sitting on top. */}
-      <div
+      {project.id !== "be-oddly" ? <><div
         className="palette-mesh-deep absolute inset-0 mix-blend-multiply"
         style={{ "--c3": `${base}dd` } as CSSProperties}
       />
@@ -66,8 +66,9 @@ export function ProjectCover({
         className="palette-veil absolute inset-0"
         style={{ "--c3": `${base}99` } as CSSProperties}
       />
+      </> : null}
 
-      {showMark ? (
+      {showMark && project.id !== "be-oddly" ? (
         <span className="cover-mark absolute bottom-5 left-6 font-semibold text-white/90">
           {project.mark}
         </span>

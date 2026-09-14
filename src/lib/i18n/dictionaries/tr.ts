@@ -1,4 +1,4 @@
-﻿import type { Dictionary } from "./en";
+import type { Dictionary } from "./en";
 
 /** Turkish — the default locale. */
 const tr: Dictionary = {
@@ -60,7 +60,7 @@ const tr: Dictionary = {
     label: "Birlikte çalıştıklarımız",
     items: [
       "Northwind",
-      "Lumen Bank",
+      "Be Oddly",
       "Kestrel",
       "Atlas Mobility",
       "Orbit Health",
@@ -231,13 +231,7 @@ const tr: Dictionary = {
     eyebrow: "Onların ifadesiyle",
     title: "Bizimle çalışmak nasıl bir şey?",
     items: [
-      {
-        quote:
-          "İlk hafta brief'imize itiraz ettiler ve haklıydılar. Marka yenilemesi bu yüzden bir çeyrek erken tamamlandı.",
-        name: "Selin Arda",
-        role: "Pazarlama Direktörü, Lumen Bank",
-      },
-      {
+{
         quote:
           "Prototip nihai ürüne o kadar yakındı ki mühendislerimiz onu şartname olarak kullandı. Bunu daha önce hiç görmemiştim.",
         name: "Jonas Weiss",
@@ -370,24 +364,16 @@ const tr: Dictionary = {
   },
 
   projects: {
-    aurora: {
-      title: "Kendini açıklamayı bırakan bir banka",
-      client: "Lumen Bank",
-      category: "Dijital ürün",
-      duration: "9 ay",
-      summary:
-        "Bir bireysel bankacılık uygulamasını tek bir soru etrafında yeniden kurduk: müşterinin şu anda bilmesi gereken ne?",
-      challenge:
-        "Lumen'in uygulaması kimsenin istemediği özelliklerden oluşan 84 ekrana ulaşmıştı. İşlevler arttıkça destek çağrıları da artıyordu ve en sık şikâyet eksik bir özellik değildi — insanlar var olanları bulamıyordu.",
-      approach:
-        "Bilgi mimarisini dört yüzeye indirdik ve etkileşim modelini doğrudan manipülasyon üzerine yeniden kurduk: dokunuşa yanıt veren bakiyeler, ayrıştırılabilen işlemler ve her zaman geldiği yere dönen geçişler. Tasarım sistemi geliştirmeden sonra değil, onunla birlikte teslim edildi.",
-      outcome:
-        "Yeni uygulama tek çeyrekte on bir pazarda yayına alındı. Destek hacmi üç yılda ilk kez düştü ve tasarım sistemi artık web platformunu da çalıştırıyor.",
-      results: [
-        { value: "−%38", label: "Destek talebi" },
-        { value: "4,8", label: "App Store puanı" },
-        { value: "2,1sn", label: "İlk eyleme süre" },
-      ],
+    "be-oddly": {
+      "title": "Be Oddly — Kendine özgü bir karakter",
+      "client": "Be Oddly",
+      "category": "Marka kimliği ve içerik",
+      "duration": "",
+      "summary": "Be Oddly için marka kimliği ve ürün görselleri.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "results": []
     },
     atlas: {
       title: "Yüzü olan bir ulaşım markası",

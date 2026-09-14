@@ -1,4 +1,4 @@
-﻿import type { Dictionary } from "./en";
+import type { Dictionary } from "./en";
 
 const de: Dictionary = {
   meta: {
@@ -59,7 +59,7 @@ const de: Dictionary = {
     label: "Vertrauen uns",
     items: [
       "Northwind",
-      "Lumen Bank",
+      "Be Oddly",
       "Kestrel",
       "Atlas Mobility",
       "Orbit Health",
@@ -223,13 +223,7 @@ const de: Dictionary = {
     eyebrow: "In ihren Worten",
     title: "Wie es ist, mit uns zu arbeiten.",
     items: [
-      {
-        quote:
-          "Sie haben unser Briefing in der ersten Woche infrage gestellt — zu Recht. Der Rebrand war deshalb ein Quartal früher fertig.",
-        name: "Selin Arda",
-        role: "CMO, Lumen Bank",
-      },
-      {
+{
         quote:
           "Der Prototyp war dem finalen Build so nah, dass unsere Entwickler ihn als Spezifikation genutzt haben. Das habe ich noch nie erlebt.",
         name: "Jonas Weiss",
@@ -358,24 +352,16 @@ const de: Dictionary = {
   },
 
   projects: {
-    aurora: {
-      title: "Eine Bank, die sich nicht mehr erklären muss",
-      client: "Lumen Bank",
-      category: "Digitales Produkt",
-      duration: "9 Monate",
-      summary:
-        "Eine Banking-App, neu gebaut um eine Frage: Was muss die Kundin genau jetzt wissen?",
-      challenge:
-        "Lumens App war auf 84 Screens voller Funktionen gewachsen, die niemand verlangt hatte. Die Support-Anrufe stiegen, während der Funktionsumfang wuchs — und die häufigste Beschwerde war keine fehlende Funktion, sondern dass niemand die vorhandenen fand.",
-      approach:
-        "Wir haben die Informationsarchitektur auf vier Flächen reduziert und das Interaktionsmodell auf direkte Manipulation umgestellt: Salden, die auf Berührung reagieren, Transaktionen, die man auseinanderziehen kann, und Übergänge, die immer dorthin zurückkehren, wo sie herkamen. Das Designsystem wurde mit dem Build ausgeliefert, nicht danach.",
-      outcome:
-        "Die App ging in einem Quartal in elf Märkten live. Das Support-Volumen sank erstmals seit drei Jahren, und das Designsystem trägt inzwischen auch die Web-Plattform.",
-      results: [
-        { value: "−38 %", label: "Support-Kontakte" },
-        { value: "4,8", label: "App-Store-Wertung" },
-        { value: "2,1 s", label: "Zeit bis zur ersten Aktion" },
-      ],
+    "be-oddly": {
+      "title": "Be Oddly — Ein eigener Charakter",
+      "client": "Be Oddly",
+      "category": "Markenidentität und Content",
+      "duration": "",
+      "summary": "Markenidentität und Produktvisuals für Be Oddly.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "results": []
     },
     atlas: {
       title: "Mobilität mit Gesicht",

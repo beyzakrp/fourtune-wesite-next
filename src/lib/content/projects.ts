@@ -6,7 +6,7 @@
  * site ships with no external image dependency and nothing can 404.
  */
 export type ProjectId =
-  | "aurora"
+  | "be-oddly"
   | "atlas"
   | "vela"
   | "tessera"
@@ -33,12 +33,12 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
-    id: "aurora",
-    slug: "aurora-banking",
+    id: "be-oddly",
+    slug: "be-oddly",
     year: 2026,
-    disciplines: ["product", "identity", "engineering"],
-    palette: ["#0088ff", "#f52e63", "#080d1f"],
-    mark: "AU",
+    disciplines: ["branding-campaign", "creative-content"],
+    palette: ["#70c4bf", "#efbd4b", "#124f62"],
+    mark: "BE",
     featured: true,
   },
   {

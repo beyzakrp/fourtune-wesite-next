@@ -1,4 +1,4 @@
-﻿import type { ProjectId } from "@/lib/content/projects";
+import type { ProjectId } from "@/lib/content/projects";
 
 /**
  * English is the *type* source for every other dictionary — but it is not the
@@ -67,7 +67,7 @@ const en = {
     label: "Trusted by",
     items: [
       "Northwind",
-      "Lumen Bank",
+      "Be Oddly",
       "Kestrel",
       "Atlas Mobility",
       "Orbit Health",
@@ -238,13 +238,7 @@ const en = {
     eyebrow: "In their words",
     title: "What it is like to work with us.",
     items: [
-      {
-        quote:
-          "They pushed back on our brief in the first week, and they were right. The rebrand landed a quarter early because of it.",
-        name: "Selin Arda",
-        role: "CMO, Lumen Bank",
-      },
-      {
+{
         quote:
           "The prototype was so close to the final build that our engineers used it as the spec. I have never seen that before.",
         name: "Jonas Weiss",
@@ -370,24 +364,16 @@ const en = {
   },
 
   projects: {
-    aurora: {
-      title: "A bank that stops explaining itself",
-      client: "Lumen Bank",
-      category: "Digital product",
-      duration: "9 months",
-      summary:
-        "Rebuilding a retail banking app around one question: what does the customer need to know right now?",
-      challenge:
-        "Lumen's app had grown into 84 screens of features nobody asked for. Support calls were rising even as functionality expanded, and the top complaint was not a missing feature — it was that people could not find the ones already there.",
-      approach:
-        "We cut the information architecture down to four surfaces and rebuilt the interaction model around direct manipulation: balances that respond to touch, transactions you can pull apart, and transitions that always return to where they came from. The design system shipped with the build, not after it.",
-      outcome:
-        "The new app launched in eleven markets over one quarter. Support volume fell for the first time in three years, and the design system now runs the web platform too.",
-      results: [
-        { value: "−38%", label: "Support contacts" },
-        { value: "4.8", label: "App Store rating" },
-        { value: "2.1s", label: "Time to first action" },
-      ],
+    "be-oddly": {
+      "title": "Be Oddly — A character of its own",
+      "client": "Be Oddly",
+      "category": "Brand identity & content",
+      "duration": "",
+      "summary": "Brand identity and product visuals for Be Oddly.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "results": []
     },
     atlas: {
       title: "Mobility, with a face",

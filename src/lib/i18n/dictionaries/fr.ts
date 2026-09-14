@@ -1,4 +1,4 @@
-﻿import type { Dictionary } from "./en";
+import type { Dictionary } from "./en";
 
 const fr: Dictionary = {
   meta: {
@@ -59,7 +59,7 @@ const fr: Dictionary = {
     label: "Ils nous font confiance",
     items: [
       "Northwind",
-      "Lumen Bank",
+      "Be Oddly",
       "Kestrel",
       "Atlas Mobility",
       "Orbit Health",
@@ -223,13 +223,7 @@ const fr: Dictionary = {
     eyebrow: "Dans leurs mots",
     title: "Travailler avec nous, concrètement.",
     items: [
-      {
-        quote:
-          "Ils ont contesté notre brief dès la première semaine, et ils avaient raison. Le rebranding est sorti un trimestre plus tôt.",
-        name: "Selin Arda",
-        role: "Directrice marketing, Lumen Bank",
-      },
-      {
+{
         quote:
           "Le prototype était si proche du build final que nos développeurs s'en sont servis comme spécification. Je n'avais jamais vu ça.",
         name: "Jonas Weiss",
@@ -358,24 +352,16 @@ const fr: Dictionary = {
   },
 
   projects: {
-    aurora: {
-      title: "Une banque qui cesse de s'expliquer",
-      client: "Lumen Bank",
-      category: "Produit numérique",
-      duration: "9 mois",
-      summary:
-        "Une application bancaire reconstruite autour d'une seule question : que doit savoir le client maintenant ?",
-      challenge:
-        "L'application de Lumen avait atteint 84 écrans de fonctionnalités que personne n'avait demandées. Les appels au support augmentaient à mesure que les fonctions s'ajoutaient, et la plainte la plus fréquente n'était pas une fonction manquante — les gens ne trouvaient pas celles qui existaient déjà.",
-      approach:
-        "Nous avons ramené l'architecture de l'information à quatre surfaces et reconstruit le modèle d'interaction sur la manipulation directe : des soldes qui répondent au toucher, des transactions qu'on peut déplier et des transitions qui reviennent toujours d'où elles viennent. Le design system a été livré avec le build, pas après.",
-      outcome:
-        "L'application est sortie dans onze marchés en un trimestre. Le volume de support a baissé pour la première fois en trois ans, et le design system porte désormais aussi la plateforme web.",
-      results: [
-        { value: "−38 %", label: "Contacts support" },
-        { value: "4,8", label: "Note App Store" },
-        { value: "2,1 s", label: "Temps jusqu'à la première action" },
-      ],
+    "be-oddly": {
+      "title": "Be Oddly — Un caractère singulier",
+      "client": "Be Oddly",
+      "category": "Identité de marque et contenu",
+      "duration": "",
+      "summary": "Identité de marque et visuels produits pour Be Oddly.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "results": []
     },
     atlas: {
       title: "La mobilité, avec un visage",
