@@ -39,6 +39,7 @@ export default async function HomePage({
     <Image key="biply" src="/companies/biply-logo.svg" alt="Biply" width={160} height={50} className="w-auto h-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />,
     <Image key="calc-marine" src="/companies/calc-marine-logo.svg" alt="Calc Marine" width={160} height={50} className="w-auto h-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />,
     <Image key="wego" src="/companies/wego-logo.svg" alt="WeGo" width={160} height={50} className="w-auto h-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />,
+    <Image key="sur-royals" src="/companies/sur-royals-logo.svg" alt="Sur Royals" width={200} height={60} className="w-auto h-20 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />,
   ];
 
   /* The sections share project metadata but own separate photography maps, so
