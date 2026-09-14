@@ -91,13 +91,13 @@ export default async function HomePage({
         muteLabel={dict.a11y.muteVideo}
         unmuteLabel={dict.a11y.unmuteVideo}
       />
-      
+
       {showBrandStrip ? (
         <section aria-label={dict.marquee.label} className="band-soft mt-3 py-10 overflow-hidden">
           <div className="section-x">
             <Reveal distance={12} className="flex items-center justify-center gap-4 sm:gap-6">
               <span aria-hidden="true" className="h-px max-w-24 flex-1 bg-line" />
-              <h2 className="type-eyebrow max-w-[24ch] text-center text-fg-secondary">
+              <h2 className="type-eyebrow text-center text-fg-secondary">
                 {dict.marquee.label}
               </h2>
               <span aria-hidden="true" className="h-px max-w-24 flex-1 bg-line" />
