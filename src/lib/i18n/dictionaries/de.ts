@@ -49,6 +49,12 @@ const de: Dictionary = {
     ],
   },
 
+  toolsBand: {
+    title: "Die Tools hinter den **Ideen**",
+    description: "Strategie, Design, Technologie und KI — im Zusammenspiel.",
+    footnote: "Und noch mehr. Immer auf der Suche nach Neuem.",
+  },
+
   marquee: {
     label: "Vertrauen uns",
     items: [

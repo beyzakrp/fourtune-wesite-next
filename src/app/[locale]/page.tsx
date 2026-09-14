@@ -13,6 +13,7 @@ import { site } from "@/lib/site";
 import { Hero } from "@/components/sections/hero";
 import { Showreel } from "@/components/sections/showreel";
 import { TrustBand } from "@/components/sections/trust-band";
+import { ToolsBand } from "@/components/sections/tools-band";
 import { ProgramList } from "@/components/sections/program-list";
 import { StoryPreview } from "@/components/sections/story-preview";
 import { StatsBand } from "@/components/sections/stats-band";
@@ -65,11 +66,10 @@ export default async function HomePage({
     role: dict.projects[p.id].category,
   }));
 
-  const programRows = dict.services.items.map((item, i) => ({
+  const programRows = dict.services.items.slice(0, 5).map((item, i) => ({
     id: item.id,
     index: String(i + 1).padStart(2, "0"),
     name: item.title,
-    description: item.summary,
     href: `${base}/services`,
   }));
 
@@ -152,6 +152,8 @@ export default async function HomePage({
           </Reveal>
         </div>
       </section>
+
+      <ToolsBand copy={dict.toolsBand} />
 
       {/* A compact introduction to the studio, with the full story one level
           deeper on its own page. */}

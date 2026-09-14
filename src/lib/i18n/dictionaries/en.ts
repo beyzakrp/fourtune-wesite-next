@@ -57,6 +57,12 @@ const en = {
     ],
   },
 
+  toolsBand: {
+    title: "Tools behind the **Ideas**",
+    description: "Strategy, design, technology and AI — working together.",
+    footnote: "And more. Always exploring what’s next.",
+  },
+
   marquee: {
     label: "Trusted by",
     items: [

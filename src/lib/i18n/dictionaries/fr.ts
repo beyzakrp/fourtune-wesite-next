@@ -49,6 +49,12 @@ const fr: Dictionary = {
     ],
   },
 
+  toolsBand: {
+    title: "Les outils derrière les **idées**",
+    description: "Stratégie, design, technologie et IA — ensemble.",
+    footnote: "Et bien plus. Toujours à la découverte de la suite.",
+  },
+
   marquee: {
     label: "Ils nous font confiance",
     items: [

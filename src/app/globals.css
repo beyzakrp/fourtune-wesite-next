@@ -1,5 +1,31 @@
 @import "tailwindcss";
 
+@keyframes tools-ribbon-drift {
+  to { transform: translateX(-50%); }
+}
+
+.tools-ribbon-mask {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.tools-ribbon-track {
+  display: flex;
+  width: max-content;
+  animation: tools-ribbon-drift 45s linear infinite;
+}
+
+.tools-ribbon:hover .tools-ribbon-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tools-ribbon-track { animation: none; width: 100%; }
+  .tools-ribbon-copy { flex-wrap: wrap; justify-content: center; width: 100%; }
+  .tools-ribbon-copy[aria-hidden="true"] { display: none; }
+  .tools-ribbon-mask { mask-image: none; }
+  .tools-ribbon { border-radius: var(--radius-lg); }
+}
+
 /* Theme is driven by data-theme on <html>, set before paint by the inline
    script in the root layout. `dark:` follows that attribute, not the OS query,
    so the manual toggle and the system preference agree. */

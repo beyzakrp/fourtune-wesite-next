@@ -50,6 +50,12 @@ const tr: Dictionary = {
     ],
   },
 
+  toolsBand: {
+    title: "**Fikirlerin** arkasındaki araçlar",
+    description: "Strateji, tasarım, teknoloji ve yapay zekâ — birlikte çalışıyor.",
+    footnote: "Ve daha fazlası. Her zaman yeninin peşindeyiz.",
+  },
+
   marquee: {
     label: "Birlikte çalıştıklarımız",
     items: [
