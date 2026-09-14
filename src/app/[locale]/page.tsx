@@ -32,7 +32,14 @@ export default async function HomePage({
   if (!isLocale(locale)) notFound();
   const dict = await getDictionary(locale);
   const base = `/${locale}`;
-  const showBrandStrip = false;
+  const showBrandStrip = true;
+
+  const brandLogos = [
+    <Image key="be-oddly" src="/companies/Be-oddly-logo.svg" alt="Be-oddly" width={160} height={50} className="w-auto h-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />,
+    <Image key="biply" src="/companies/biply-logo.svg" alt="Biply" width={160} height={50} className="w-auto h-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />,
+    <Image key="calc-marine" src="/companies/calc-marine-logo.svg" alt="Calc Marine" width={160} height={50} className="w-auto h-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />,
+    <Image key="wego" src="/companies/wego-logo.svg" alt="WeGo" width={160} height={50} className="w-auto h-10 object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" />,
+  ];
 
   /* The sections share project metadata but own separate photography maps, so
      replacing an image in one composition cannot silently change another. */
@@ -84,6 +91,28 @@ export default async function HomePage({
         muteLabel={dict.a11y.muteVideo}
         unmuteLabel={dict.a11y.unmuteVideo}
       />
+      
+      {showBrandStrip ? (
+        <section aria-label={dict.marquee.label} className="band-soft mt-3 py-10 overflow-hidden">
+          <div className="section-x">
+            <Reveal distance={12} className="flex items-center justify-center gap-4 sm:gap-6">
+              <span aria-hidden="true" className="h-px max-w-24 flex-1 bg-line" />
+              <h2 className="type-eyebrow max-w-[24ch] text-center text-fg-secondary">
+                {dict.marquee.label}
+              </h2>
+              <span aria-hidden="true" className="h-px max-w-24 flex-1 bg-line" />
+            </Reveal>
+          </div>
+          <div className="mt-8 sm:mt-10">
+            <VelocityMarquee
+              items={brandLogos}
+              itemClassName="mx-8 md:mx-16 flex items-center justify-center"
+              
+            />
+          </div>
+        </section>
+      ) : null}
+
 
       <TrustBand
         label={dict.ghost.label}
@@ -95,17 +124,7 @@ export default async function HomePage({
         nextLabel={dict.a11y.next}
       />
 
-      {showBrandStrip ? (
-        <section aria-label={dict.marquee.label} className="band-soft mt-3 py-10">
-          <VelocityMarquee
-            items={dict.marquee.items}
-            itemClassName="mx-8 type-h3 text-fg-muted md:mx-12"
-            pauseLabel={dict.a11y.pauseMarquee}
-            playLabel={dict.a11y.playMarquee}
-          />
-        </section>
-      ) : null}
-
+      
       {/* Programs */}
       <section
         id="programs"

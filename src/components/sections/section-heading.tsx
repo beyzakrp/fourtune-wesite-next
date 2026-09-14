@@ -24,7 +24,7 @@ export function SectionHeading({
         </Reveal>
       ) : null}
       <Reveal index={1}>
-        <h2 className="mt-4 type-h2 text-balance">{title}</h2>
+        <h2 className="type-h2 text-balance" >{title}</h2>
       </Reveal>
       {lead ? (
         <Reveal index={2}>

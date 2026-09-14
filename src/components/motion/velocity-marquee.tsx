@@ -13,13 +13,12 @@ import {
 } from "motion/react";
 
 type VelocityMarqueeProps = {
-  items: readonly string[];
+  items: readonly React.ReactNode[];
   /** Base drift in px per second. Negative runs right-to-left. */
   baseSpeed?: number;
   className?: string;
   itemClassName?: string;
-  pauseLabel: string;
-  playLabel: string;
+
 };
 
 const wrap = (min: number, max: number, value: number) => {
@@ -41,8 +40,7 @@ export function VelocityMarquee({
   baseSpeed = -32,
   className,
   itemClassName,
-  pauseLabel,
-  playLabel,
+
 }: VelocityMarqueeProps) {
   const reduced = useReducedMotion();
   const [paused, setPaused] = useState(false);
@@ -123,11 +121,13 @@ export function VelocityMarquee({
           {content}
         </motion.div>
       </div>
+      {/*
       <button
         type="button"
         onClick={() => setPaused((p) => !p)}
         className="mx-auto mt-4 flex h-7 items-center gap-2 rounded-full border border-line px-3 type-caption text-fg-muted transition-colors hover:text-fg"
       >
+
         <span
           aria-hidden
           className={
@@ -136,8 +136,9 @@ export function VelocityMarquee({
               : "flex gap-[3px] before:block before:h-2 before:w-[2px] before:bg-current after:block after:h-2 after:w-[2px] after:bg-current"
           }
         />
-        {paused ? playLabel : pauseLabel}
+       
       </button>
+            */}
     </div>
   );
 }
