@@ -64,7 +64,7 @@ export default async function HomePage({
     role: dict.projects[p.id].category,
   }));
 
-  const programRows = dict.services.items.slice(0, 4).map((item, i) => ({
+  const programRows = dict.services.items.map((item, i) => ({
     id: item.id,
     index: String(i + 1).padStart(2, "0"),
     name: item.title,

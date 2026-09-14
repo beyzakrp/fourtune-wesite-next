@@ -85,16 +85,16 @@ const en = {
 
   services: {
     eyebrow: "What we do",
-    title: "Fourtune Services.",
+    title: "Fourtune Services",
     lead: "Strategy, content, performance, digital experiences and branded things people want to keep — all tuned by one team.",
-    viewAll: "All services",
+    viewAll: "All our services",
     deliverablesLabel: "Includes",
     items: [
       {
         id: "digital-strategy",
         title: "Digital Strategy",
         summary:
-          "Think big. Move smart. We turn insights, data and ideas into digital strategies that actually get (no but really) you somewhere.",
+          "Think big. Move smart. We turn insights, data and ideas into digital strategies that truly take you forward.",
         deliverables: [
           "Digital audits and opportunity mapping",
           "Audience, market and competitor research",
@@ -106,7 +106,7 @@ const en = {
         id: "social-media",
         title: "Social Media",
         summary:
-          "Make your brand impossible to scroll past. From content planning to community vibes, we make your social media feel alive, relevant and 100% you. We are your 4tune and we are here 4 you!",
+          "Make your brand impossible to scroll past. From content planning to community management, we keep your social media alive, relevant and unmistakably you. We are here for you!",
         deliverables: [
           "Social strategy and content calendars",
           "Platform-native creative and copywriting",
@@ -130,7 +130,7 @@ const en = {
         id: "performance-marketing",
         title: "Performance Marketing",
         summary:
-          "Less guessing. More growing. We create, test and optimize campaigns that turn clicks into customers and budgets into real results. Let’s get nerdy with 4tune (not that much… relax).",
+          "Less guessing. More growing. We create, test and optimize campaigns that turn clicks into customers and budgets into real results.",
         deliverables: [
           "Paid search and paid social campaigns",
           "Audience planning and retargeting",
@@ -142,7 +142,7 @@ const en = {
         id: "web-digital-experience",
         title: "Web & Digital Experience",
         summary:
-          "Your digital home but make it iconic. We create websites and digital experiences that look good, feel smooth and make people want to stay — just like our website ;)",
+          "Your digital home. Make it iconic. We create websites and digital experiences that look good, feel smooth and make people want to stay. Just like our own website.",
         deliverables: [
           "UX research and information architecture",
           "UI design and scalable design systems",
@@ -154,7 +154,7 @@ const en = {
         id: "branding-campaign",
         title: "Branding & Campaign",
         summary:
-          "Give your brand a personality. From the big idea to the final campaign, we build brands that have a voice, a vibe and something to say. Let’s make some voice with 4tune!",
+          "Give your brand a personality. From the big idea to the final campaign, we build brands that have a voice, a vibe and something to say.",
         deliverables: [
           "Brand strategy and positioning",
           "Visual and verbal identity systems",
@@ -164,9 +164,9 @@ const en = {
       },
       {
         id: "branding-merchandise",
-        title: "Branding Merchandise",
+        title: "Branded Merchandise",
         summary:
-          "Put your brand out there. Literally. From merch to custom goodies, we turn your brand into things people actually want to keep, use and show off. You can brag with your personalized products with 4tune.",
+          "Put your brand out there. Literally. From merchandise to personalized products, we turn your brand into things people actually want to keep, use and show off. Custom products help build a sense of belonging around your brand.",
         deliverables: [
           "Merchandise strategy and product selection",
           "Custom product and apparel design",

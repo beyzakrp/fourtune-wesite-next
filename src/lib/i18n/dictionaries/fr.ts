@@ -76,85 +76,90 @@ const fr: Dictionary = {
   },
 
   services: {
-    eyebrow: "Ce que nous faisons",
-    title: "Six disciplines, une équipe.",
-    lead: "La plupart des studios vous font passer d'un service à l'autre. Nous gardons stratégie, design et développement dans la même pièce — c'est pourquoi ce que nous montrons est ce que vous recevez.",
-    viewAll: "Tous les services",
-    deliverablesLabel: "Comprend",
-    items: [
+    "eyebrow": "Ce que nous faisons",
+    "title": "Les services Fourtune",
+    "lead": "De la stratégie au contenu, de la performance aux expériences numériques et aux produits de marque que l’on a envie de garder — une seule équipe, sur la même longueur d’onde.",
+    "viewAll": "Tous nos services",
+    "deliverablesLabel": "Prestations incluses",
+    "items": [
       {
-        id: "strategy",
-        title: "Stratégie de marque",
-        summary:
-          "Positionnement, naming et récit. Nous cherchons la seule chose vraie d'une entreprise et faisons répondre tout le reste.",
-        deliverables: [
-          "Étude de marché et d'audience",
-          "Positionnement et messages",
-          "Naming et identité verbale",
-          "Architecture de marque",
-        ],
+        "id": "digital-strategy",
+        "title": "Stratégie digitale",
+        "summary": "Voyez grand. Agissez avec intelligence. Nous transformons les analyses, les données et les idées en stratégies digitales qui vous font vraiment avancer.",
+        "deliverables": [
+          "Audit digital et cartographie des opportunités",
+          "Études des publics, du marché et de la concurrence",
+          "Parcours client et stratégie de canaux",
+          "Cadre de mesure et feuille de route opérationnelle"
+        ]
       },
       {
-        id: "identity",
-        title: "Design d'identité",
-        summary:
-          "Signes, systèmes typographiques et les règles qui les tiennent — conçus pour résister au contact du réel.",
-        deliverables: [
-          "Systèmes de logo et de signes",
-          "Typographie et couleur",
-          "Direction artistique",
-          "Chartes et kits d'application",
-        ],
+        "id": "social-media",
+        "title": "Réseaux sociaux",
+        "summary": "Faites de votre marque celle qui arrête le défilement. De la planification des contenus à la gestion de communauté, nous animons vos réseaux sociaux pour qu’ils soient vivants, actuels et pleinement à votre image. Nous sommes là pour vous !",
+        "deliverables": [
+          "Stratégie de réseaux sociaux et calendrier éditorial",
+          "Création de contenus et rédaction adaptées à chaque plateforme",
+          "Gestion de communauté et engagement",
+          "Reporting, veille sociale et optimisation"
+        ]
       },
       {
-        id: "product",
-        title: "Produit numérique",
-        summary:
-          "Des interfaces qu'on saisit sans y penser. Recherche, parcours, design systems et prototypes réellement utilisables.",
-        deliverables: [
-          "Stratégie produit et UX",
-          "Design d'interface",
-          "Design systems",
-          "Prototypes interactifs",
-        ],
+        "id": "creative-content",
+        "title": "Création et contenu",
+        "summary": "Des idées qui font parler. Nous construisons des identités de marque, créons des histoires et pilotons la production. Nous transformons vos idées en contenus que les gens ont vraiment envie de voir.",
+        "deliverables": [
+          "Concepts créatifs et narration",
+          "Identité de marque et direction artistique",
+          "Photographie, vidéo et gestion de production",
+          "Systèmes de contenus éditoriaux et déclinaisons"
+        ]
       },
       {
-        id: "motion",
-        title: "Motion et film",
-        summary:
-          "L'animation comme comportement, pas comme décor. Chaque transition dit d'où vient une chose et où elle va.",
-        deliverables: [
-          "Systèmes de motion d'interface",
-          "Animation de marque",
-          "Réalisation et production",
-          "3D et compositing",
-        ],
+        "id": "performance-marketing",
+        "title": "Marketing à la performance",
+        "summary": "Moins de suppositions. Plus de croissance. Nous créons, testons et optimisons des campagnes qui transforment les clics en clients et les budgets en résultats concrets.",
+        "deliverables": [
+          "Campagnes de référencement payant et de publicité sur les réseaux sociaux",
+          "Planification des audiences et reciblage",
+          "Tests créatifs et optimisation des conversions",
+          "Reporting des performances et gestion budgétaire"
+        ]
       },
       {
-        id: "engineering",
-        title: "Ingénierie web",
-        summary:
-          "Nous construisons ce que nous dessinons. Des front-ends rapides et accessibles, et l'outillage de contenu où votre équipe vivra des années.",
-        deliverables: [
-          "Développement Next.js et React",
-          "Intégration CMS headless",
-          "Performance et accessibilité",
-          "Passation et formation",
-        ],
+        "id": "web-digital-experience",
+        "title": "Web et expérience digitale",
+        "summary": "Votre chez-vous numérique. Avec une signature iconique. Nous créons des sites et des expériences digitales qui séduisent, offrent une navigation fluide et donnent envie de rester. Comme notre propre site.",
+        "deliverables": [
+          "Recherche UX et architecture de l’information",
+          "Design d’interface et systèmes de design évolutifs",
+          "Développement de sites et de produits adaptés au mobile",
+          "Audits des données analytiques, de l’accessibilité et des conversions"
+        ]
       },
       {
-        id: "campaign",
-        title: "Contenu et campagne",
-        summary:
-          "Un lancement qui laisse la marque intacte. Une idée, adaptée honnêtement à chaque endroit où elle doit vivre.",
-        deliverables: [
-          "Concepts de campagne",
-          "Direction artistique et prises de vue",
-          "Systèmes social et éditorial",
-          "Guides de lancement",
-        ],
+        "id": "branding-campaign",
+        "title": "Identité de marque et campagnes",
+        "summary": "Donnez une personnalité à votre marque. De la grande idée à la campagne finale, nous créons des marques qui ont une voix, une allure et quelque chose à dire.",
+        "deliverables": [
+          "Stratégie de marque et positionnement",
+          "Systèmes d’identité visuelle et verbale",
+          "Concepts de campagne et création de visuels clés",
+          "Planification du lancement et déclinaisons par canal"
+        ]
       },
-    ],
+      {
+        "id": "branding-merchandise",
+        "title": "Produits de marque",
+        "summary": "Donnez corps à votre marque. Au sens propre. Du merchandising aux produits personnalisés, nous transformons votre marque en objets que les gens ont vraiment envie de garder, d’utiliser et de montrer. Les produits personnalisés renforcent le sentiment d’appartenance à votre marque.",
+        "deliverables": [
+          "Stratégie de produits de marque et sélection des produits",
+          "Design de produits et de textiles personnalisés",
+          "Packaging et expérience de déballage",
+          "Sélection des fournisseurs et gestion de production"
+        ]
+      }
+    ]
   },
 
   work: {

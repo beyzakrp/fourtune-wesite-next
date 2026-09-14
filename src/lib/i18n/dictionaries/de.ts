@@ -76,85 +76,90 @@ const de: Dictionary = {
   },
 
   services: {
-    eyebrow: "Was wir tun",
-    title: "Sechs Disziplinen, ein Team.",
-    lead: "Die meisten Studios reichen Sie zwischen Abteilungen weiter. Wir halten Strategie, Design und Entwicklung im selben Raum — deshalb ist das, was wir zeigen, auch das, was Sie bekommen.",
-    viewAll: "Alle Leistungen",
-    deliverablesLabel: "Enthält",
-    items: [
+    "eyebrow": "Was wir tun",
+    "title": "Fourtune Leistungen",
+    "lead": "Von Strategie und Content über Performance und digitale Erlebnisse bis hin zu Markenprodukten, die Menschen behalten möchten — alles von einem Team auf derselben Wellenlänge.",
+    "viewAll": "Alle unsere Leistungen",
+    "deliverablesLabel": "Leistungsumfang",
+    "items": [
       {
-        id: "strategy",
-        title: "Markenstrategie",
-        summary:
-          "Positionierung, Naming und Narrativ. Wir finden das eine Wahre an einem Unternehmen und richten alles andere danach aus.",
-        deliverables: [
-          "Markt- und Zielgruppenforschung",
-          "Positionierung und Messaging",
-          "Naming und verbale Identität",
-          "Markenarchitektur",
-        ],
+        "id": "digital-strategy",
+        "title": "Digitale Strategie",
+        "summary": "Groß denken. Klug handeln. Wir verwandeln Erkenntnisse, Daten und Ideen in digitale Strategien, die Sie wirklich weiterbringen.",
+        "deliverables": [
+          "Digitale Bestandsaufnahme und Chancenanalyse",
+          "Zielgruppen-, Markt- und Wettbewerbsforschung",
+          "Customer Journey und Kanalstrategie",
+          "Messkonzept und Maßnahmenplan"
+        ]
       },
       {
-        id: "identity",
-        title: "Identitätsdesign",
-        summary:
-          "Zeichen, Schriftsysteme und die Regeln, die sie zusammenhalten — gebaut, um den Kontakt mit der Realität zu überstehen.",
-        deliverables: [
-          "Logo- und Zeichensysteme",
-          "Typografie und Farbe",
-          "Art Direction",
-          "Richtlinien und Toolkits",
-        ],
+        "id": "social-media",
+        "title": "Social Media",
+        "summary": "Machen Sie Ihre Marke so spannend, dass niemand weiterscrollt. Von der Content-Planung bis zum Community-Management gestalten wir Ihre Social-Media-Präsenz lebendig, aktuell und unverwechselbar. Wir sind für Sie da!",
+        "deliverables": [
+          "Social-Media-Strategie und Redaktionsplanung",
+          "Plattformspezifische Kreativinhalte und Texte",
+          "Community-Management und Interaktion",
+          "Reporting, Social Listening und Optimierung"
+        ]
       },
       {
-        id: "product",
-        title: "Digitales Produkt",
-        summary:
-          "Oberflächen, nach denen man greift, ohne nachzudenken. Research, Flows, Designsysteme und Prototypen, die man wirklich benutzen kann.",
-        deliverables: [
-          "Produkt- und UX-Strategie",
-          "Interface-Design",
-          "Designsysteme",
-          "Interaktive Prototypen",
-        ],
+        "id": "creative-content",
+        "title": "Kreation und Content",
+        "summary": "Ideen, über die man spricht. Wir entwickeln Markenidentitäten, erzählen Geschichten und steuern die Produktion. So werden Ihre Ideen zu Inhalten, die Menschen wirklich sehen möchten.",
+        "deliverables": [
+          "Kreativkonzepte und Storytelling",
+          "Markenidentität und Art Direction",
+          "Foto-, Video- und Produktionsmanagement",
+          "Redaktionelle Content-Systeme und Adaptionen"
+        ]
       },
       {
-        id: "motion",
-        title: "Motion und Film",
-        summary:
-          "Animation als Verhalten, nicht als Dekoration. Jeder Übergang erklärt, woher etwas kam und wohin es ging.",
-        deliverables: [
-          "Motion-Systeme für Interfaces",
-          "Markenanimation",
-          "Regie und Produktion",
-          "3D und Compositing",
-        ],
+        "id": "performance-marketing",
+        "title": "Performance-Marketing",
+        "summary": "Weniger raten. Mehr wachsen. Wir entwickeln, testen und optimieren Kampagnen, die Klicks in Kunden und Budgets in echte Ergebnisse verwandeln.",
+        "deliverables": [
+          "Suchmaschinenwerbung und Social-Media-Kampagnen",
+          "Zielgruppenplanung und Retargeting",
+          "Tests von Werbemitteln und Conversion-Optimierung",
+          "Performance-Reporting und Budgetmanagement"
+        ]
       },
       {
-        id: "engineering",
-        title: "Web-Entwicklung",
-        summary:
-          "Wir bauen, was wir entwerfen. Schnelle, barrierefreie Frontends und das Content-Werkzeug, in dem Ihr Team jahrelang arbeiten wird.",
-        deliverables: [
-          "Next.js- und React-Entwicklung",
-          "Headless-CMS-Anbindung",
-          "Performance und Barrierefreiheit",
-          "Übergabe und Schulung",
-        ],
+        "id": "web-digital-experience",
+        "title": "Web und digitale Erlebnisse",
+        "summary": "Ihr digitales Zuhause. Mit Kultpotenzial. Wir gestalten Websites und digitale Erlebnisse, die gut aussehen, sich intuitiv anfühlen und zum Bleiben einladen. Genau wie unsere eigene Website.",
+        "deliverables": [
+          "UX-Forschung und Informationsarchitektur",
+          "UI-Design und skalierbare Designsysteme",
+          "Entwicklung mobiloptimierter Websites und digitaler Produkte",
+          "Analysen zu Nutzungsverhalten, Barrierefreiheit und Conversion"
+        ]
       },
       {
-        id: "campaign",
-        title: "Content und Kampagne",
-        summary:
-          "Launch-Arbeit, die die Marke intakt lässt. Eine Idee, ehrlich übersetzt in jeden Kanal, in dem sie leben muss.",
-        deliverables: [
-          "Kampagnenkonzepte",
-          "Art Direction und Shootings",
-          "Social- und Redaktionssysteme",
-          "Launch-Playbooks",
-        ],
+        "id": "branding-campaign",
+        "title": "Markenentwicklung und Kampagnen",
+        "summary": "Geben Sie Ihrer Marke Persönlichkeit. Von der großen Idee bis zur fertigen Kampagne entwickeln wir Marken mit einer Stimme, einer Ausstrahlung und etwas zu sagen.",
+        "deliverables": [
+          "Markenstrategie und Positionierung",
+          "Visuelle und verbale Identitätssysteme",
+          "Kampagnenkonzepte und Key-Visual-Design",
+          "Launch-Planung und kanalspezifische Adaptionen"
+        ]
       },
-    ],
+      {
+        "id": "branding-merchandise",
+        "title": "Markenprodukte",
+        "summary": "Bringen Sie Ihre Marke in die Welt. Ganz wortwörtlich. Von Merchandise bis zu personalisierten Produkten verwandeln wir Ihre Marke in Dinge, die Menschen behalten, nutzen und zeigen möchten. Personalisierte Produkte stärken das Zugehörigkeitsgefühl zu Ihrer Marke.",
+        "deliverables": [
+          "Merchandise-Strategie und Produktauswahl",
+          "Individuelles Produkt- und Textildesign",
+          "Verpackung und Unboxing-Erlebnis",
+          "Lieferantenauswahl und Produktionsmanagement"
+        ]
+      }
+    ]
   },
 
   work: {

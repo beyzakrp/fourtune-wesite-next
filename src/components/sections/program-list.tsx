@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { Reveal } from "@/components/motion/reveal";
+import { ServiceBubbles } from "@/components/ui/service-bubbles";
 
 export type ProgramRow = {
   id: string;
@@ -44,19 +45,20 @@ export function ProgramList({ rows }: { rows: ProgramRow[] }) {
                 whileFocus="hover"
                 whileTap={{ scale: 0.995, x: 4 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                className="flex origin-left items-center gap-6 py-7"
+                className="flex origin-left items-start gap-3 py-7 sm:gap-6"
               >
-                <span className="w-10 shrink-0 text-sm font-medium text-fg-muted">
+                <span className="mt-1.5 w-6 shrink-0 text-sm font-medium text-fg-muted sm:w-10">
                   {row.index}
                 </span>
 
-                <span className="flex-1">
+                <span className="min-w-0 flex-1">
                   <span className="block text-2xl font-medium tracking-[-0.02em] sm:text-3xl">
                     {row.name}
                   </span>
                   <span className="measure mt-1 block text-sm text-fg-muted">
                     {row.description}
                   </span>
+                  <ServiceBubbles serviceId={row.id} />
                 </span>
 
                 <span className="grid size-11 shrink-0 place-items-center rounded-full border border-line">

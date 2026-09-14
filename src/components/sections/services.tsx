@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Reveal } from "@/components/motion/reveal";
+import { ServiceBubbles } from "@/components/ui/service-bubbles";
 import { Sparkle } from "@/components/site/wordmark";
 import { springMove, springSnappy } from "@/lib/motion/springs";
 
@@ -54,7 +55,7 @@ export function Services({
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <span className="flex-1">
+                <span className="min-w-0 flex-1">
                   <span
                     className={`block type-h3 transition-colors ${
                       isOpen ? "text-fg" : "text-fg group-hover:text-accent"
@@ -65,6 +66,7 @@ export function Services({
                   <span className="mt-3 block max-w-[54ch] type-body text-fg-muted">
                     {item.summary}
                   </span>
+                  <ServiceBubbles serviceId={item.id} />
                 </span>
 
                 <motion.span

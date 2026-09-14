@@ -87,7 +87,7 @@ const tr: Dictionary = {
         id: "digital-strategy",
         title: "Dijital Strateji",
         summary:
-          "Büyük düşün. Akıllı hareket et. İçgörüleri, verileri ve fikirleri, sizi gerçekten bir yerlere götürecek dijital stratejilere dönüştürüyoruz. 4tune varsa panik yok!",
+          "Büyük düşün. Akıllı hareket et. İçgörüleri, verileri ve fikirleri, sizi gerçekten bir yerlere götürecek dijital stratejilere dönüştürüyoruz.",
         deliverables: [
           "Dijital durum analizi ve fırsat haritası",
           "Hedef kitle, pazar ve rakip araştırması",
@@ -99,7 +99,7 @@ const tr: Dictionary = {
         id: "social-media",
         title: "Sosyal Medya",
         summary:
-          "Markanı kaydırılması imkânsız hâle getir. İçerik planlamadan topluluk yönetimine kadar sosyal medyanızı canlı, güncel ve tamamen ‘siz’ hissettirecek şekilde yönetiyoruz. Biz sizin 4 yapraklı ajansınızız ve sizin için buradayız!",
+          "Markanı kaydırılması imkânsız hâle getir. İçerik planlamadan topluluk yönetimine kadar sosyal medyanızı canlı, güncel ve tamamen ‘siz’ hissettirecek şekilde yönetiyoruz. Sizin için buradayız!",
         deliverables: [
           "Sosyal medya stratejisi ve içerik takvimi",
           "Platforma özel yaratıcı içerik ve metin üretimi",
@@ -123,7 +123,7 @@ const tr: Dictionary = {
         id: "performance-marketing",
         title: "Performans Pazarlaması",
         summary:
-          "Daha az tahmin. Daha çok büyüme. Tıklamaları müşterilere, bütçeleri ise gerçek sonuçlara dönüştüren kampanyalar yaratıyor, test ediyor ve optimize ediyoruz. 4tune’la biraz inekleyelim (ama çok da değil… rahat olun).",
+          "Daha az tahmin. Daha çok büyüme. Tıklamaları müşterilere, bütçeleri ise gerçek sonuçlara dönüştüren kampanyalar yaratıyor, test ediyor ve optimize ediyoruz.",
         deliverables: [
           "Ücretli arama ve sosyal medya kampanyaları",
           "Hedef kitle planlama ve yeniden hedefleme",
@@ -135,7 +135,7 @@ const tr: Dictionary = {
         id: "web-digital-experience",
         title: "Web ve Dijital Deneyim",
         summary:
-          "Dijital eviniz. Ama ikonik olanından. İyi görünen, akıcı hissettiren ve insanların içinde kalmak isteyeceği web siteleri ve dijital deneyimler yaratıyoruz. Tıpkı bizim web sitemiz gibi ;)",
+          "Dijital eviniz. Ama ikonik olanından. İyi görünen, akıcı hissettiren ve insanların içinde kalmak isteyeceği web siteleri ve dijital deneyimler yaratıyoruz. Tıpkı bizim web sitemiz gibi.",
         deliverables: [
           "Kullanıcı deneyimi araştırması ve bilgi mimarisi",
           "Kullanıcı arayüzü tasarımı ve ölçeklenebilir tasarım sistemleri",
@@ -147,7 +147,7 @@ const tr: Dictionary = {
         id: "branding-campaign",
         title: "Markalama ve Kampanya",
         summary:
-          "Markana bir kişilik kazandır çünkü kişilik her yerde önemli :) Büyük fikirden son kampanyaya kadar; bir sesi, bir havası ve söyleyecek bir şeyi olan markalar yaratıyoruz. 4tune’la biraz ses getirelim!",
+          "Markana bir kişilik kazandır. Büyük fikirden son kampanyaya kadar; bir sesi, bir havası ve söyleyecek bir şeyi olan markalar yaratıyoruz.",
         deliverables: [
           "Marka stratejisi ve konumlandırma",
           "Görsel ve sözel kimlik sistemleri",
@@ -159,7 +159,7 @@ const tr: Dictionary = {
         id: "branding-merchandise",
         title: "Markalı Ürünler",
         summary:
-          "Markanı ortaya çıkar. Hem de kelimenin tam anlamıyla. Merch’lerden kişiselleştirilmiş ürünlere kadar, markanızı insanların gerçekten saklamak, kullanmak ve göstermek isteyeceği ürünlere dönüştürüyoruz. 4tune’la kişiselleştirilmiş ürünlerinle biraz hava atabilirsin.",
+          "Markanı ortaya çıkar. Hem de kelimenin tam anlamıyla. Merch’lerden kişiselleştirilmiş ürünlere kadar, markanızı insanların gerçekten saklamak, kullanmak ve göstermek isteyeceği ürünlere dönüştürüyoruz. Kişiselleştirilmiş ürünlerinle markana aidiyet katabilirsin.",
         deliverables: [
           "Markalı ürün stratejisi ve ürün seçimi",
           "Kişiselleştirilmiş ürün ve tekstil tasarımı",
