@@ -69,7 +69,7 @@ const en = {
       "Northwind",
       "Be Oddly",
       "Kestrel",
-      "Atlas Mobility",
+      "Calc Marine",
       "Orbit Health",
       "Veridian",
       "Halo Audio",
@@ -240,12 +240,6 @@ const en = {
     items: [
 {
         quote:
-          "The prototype was so close to the final build that our engineers used it as the spec. I have never seen that before.",
-        name: "Jonas Weiss",
-        role: "Head of Product, Atlas Mobility",
-      },
-      {
-        quote:
           "Nine people did what our previous agency needed forty for, and answered the phone every time.",
         name: "Marie Lambert",
         role: "Founder, Field Notes",
@@ -367,32 +361,24 @@ const en = {
     "be-oddly": {
       "title": "Be Oddly — A character of its own",
       "client": "Be Oddly",
-      "category": "Brand identity & content",
+      "category": "Social media content",
       "duration": "",
-      "summary": "Brand identity and product visuals for Be Oddly.",
+      "summary": "Social media content for Be Oddly.",
       "challenge": "",
       "approach": "",
       "outcome": "",
       "results": []
     },
-    atlas: {
-      title: "Mobility, with a face",
-      client: "Atlas Mobility",
-      category: "Brand identity",
-      duration: "6 months",
-      summary:
-        "A fleet operator with excellent logistics and no personality at all. We gave it one.",
-      challenge:
-        "Atlas moved two million people a month and was invisible doing it. Everything from the vehicle livery to the ticket receipt looked like it came from three different companies, because it did.",
-      approach:
-        "One mark, one type system, one motion signature applied from the app splash to the side of a bus. We designed the wayfinding first — it is the hardest constraint — and let everything else inherit from it.",
-      outcome:
-        "The identity rolled out across 1,400 vehicles and 90 stations in fourteen months. Unprompted brand recall in their core market roughly doubled.",
-      results: [
-        { value: "×2.1", label: "Brand recall" },
-        { value: "1,400", label: "Vehicles rebranded" },
-        { value: "14mo", label: "Full rollout" },
-      ],
+    "calc-marine": {
+      "title": "Calc Marine — Brand identity",
+      "client": "Calc Marine",
+      "category": "Brand identity",
+      "duration": "",
+      "summary": "Logo, business card, folder and corporate document designs for Calc Marine.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "results": []
     },
     vela: {
       title: "Commerce that loads before you blink",

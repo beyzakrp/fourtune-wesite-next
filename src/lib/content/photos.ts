@@ -45,9 +45,9 @@ export const heroPhoto: Photo = {
 /** Project listing and case-study covers. */
 export const projectPhotos: Record<ProjectId, Photo> = {
   "be-oddly": { src: "/portfolios/be-oddly/be-oddly-content-logo-branding.png", alt: "Be Oddly" },
-  atlas: {
-    src: `https://i.pinimg.com/736x/28/86/7d/28867d4b89876ed649b1ea8ced422f69.jpg`,
-    alt: "Person lettering on tracing paper using a mechanical pencil",
+  "calc-marine": {
+    src: "/portfolios/calc-marine/BrandLogoDesign1.png",
+    alt: "Calc Marine — brand and logo design",
   },
   vela: {
     src: `https://i.pinimg.com/736x/5e/8d/d3/5e8dd3dfde496481cd3f35b764013d78.jpg`,
@@ -73,9 +73,9 @@ export const projectPhotos: Record<ProjectId, Photo> = {
  */
 export const homeHeroCarouselPhotos: Partial<Record<ProjectId, Photo>> = {
   "be-oddly": { src: "/portfolios/be-oddly/be-oddly-content-logo-branding.png", alt: "Be Oddly" },
-  atlas: {
-    src: "https://i.pinimg.com/736x/6c/37/26/6c3726946a34d898522d58dcdcd9ce68.jpg",
-    alt: "Bright creative office with shared work tables",
+  "calc-marine": {
+    src: "/portfolios/calc-marine/BrandLogoDesign1.png",
+    alt: "Calc Marine — brand and logo design",
   },
   vela: {
     src: "https://i.pinimg.com/736x/4c/c8/33/4cc833d3d34fceb593ac0c6bb71cbde1.jpg",
@@ -88,15 +88,9 @@ export const homeTrustPhotos: Partial<
   Record<ProjectId, { front: Photo; back: Photo }>
 > = {
   "be-oddly": { front: { src: "/portfolios/be-oddly/be-oddly-content-logo-branding.png", alt: "Be Oddly" }, back: { src: "/portfolios/be-oddly/be-oddly-content-1.png", alt: "Be Oddly" } },
-  atlas: {
-    front: {
-      src: "https://i.pinimg.com/736x/28/86/7d/28867d4b89876ed649b1ea8ced422f69.jpg",
-      alt: "People collaborating around a studio table",
-    },
-    back: {
-      src: "https://i.pinimg.com/736x/6c/37/26/6c3726946a34d898522d58dcdcd9ce68.jpg",
-      alt: "Secondary campaign visual for Atlas",
-    },
+  "calc-marine": {
+    front: { src: "/portfolios/calc-marine/BrandLogoDesign1.png", alt: "Calc Marine — brand and logo design" },
+    back: { src: "/portfolios/calc-marine/BusinessCardDesign.png", alt: "Calc Marine — business card design" },
   },
   vela: {
     front: {

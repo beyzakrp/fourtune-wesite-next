@@ -15,7 +15,7 @@ export function ToolsBand({ copy }: { copy: Dictionary["toolsBand"] }) {
 
 
   return (
-    <section aria-labelledby="tools-heading" className="mt-5 overflow-hidden rounded-[var(--radius-lg)] text-[var(--brand-ink)] section-x pb-0 pt-20">
+    <section aria-labelledby="tools-heading" className="mt-5 overflow-hidden rounded-[var(--radius-lg)] text-fg section-x pb-0 pt-20">
       <Reveal className="mx-auto max-w-3xl text-center">
         <h2 id="tools-heading" className="font-display text-[clamp(2.25rem,4.5vw,4rem)] font-medium uppercase leading-[1.02] tracking-[-0.025em]">
           {copy.title.split(/(\*\*.*?\*\*)/g).map((part, index) =>
@@ -24,7 +24,7 @@ export function ToolsBand({ copy }: { copy: Dictionary["toolsBand"] }) {
             ) : part,
           )}
         </h2>
-        <p className="mx-auto mt-5 text-balance text-sm leading-relaxed text-black/65 sm:text-base">
+        <p className="mx-auto mt-5 text-balance text-sm leading-relaxed text-fg-secondary sm:text-base">
           {copy.description}
         </p>
       </Reveal>
@@ -45,7 +45,7 @@ export function ToolsBand({ copy }: { copy: Dictionary["toolsBand"] }) {
         </div>
       </div>
       <div className="mt-5 flex items-center justify-center gap-3">
-        <p className="text-xs leading-relaxed tracking-[0.02em] text-black/55 sm:text-sm">{copy.footnote}</p>
+        <p className="text-xs leading-relaxed tracking-[0.02em] text-fg-muted sm:text-sm">{copy.footnote}</p>
       </div>
     </section>
   );

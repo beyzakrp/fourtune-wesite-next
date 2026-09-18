@@ -7,6 +7,13 @@ import beOddly4 from "../../../../../public/portfolios/be-oddly/be-oddly-content
 import beOddly5 from "../../../../../public/portfolios/be-oddly/be-oddly-content-5.png";
 import beOddly6 from "../../../../../public/portfolios/be-oddly/be-oddly-content-6.png";
 import beOddlyBrand from "../../../../../public/portfolios/be-oddly/be-oddly-content-logo-branding.png";
+import calcMarine1 from "../../../../../public/portfolios/calc-marine/BrandLogoDesign1.png";
+import calcMarine2 from "../../../../../public/portfolios/calc-marine/BrandLogoDesign2.png";
+import calcMarine3 from "../../../../../public/portfolios/calc-marine/BrandLogoDesign3.png";
+import calcMarine4 from "../../../../../public/portfolios/calc-marine/BrandLogoDesign4.png";
+import calcMarine5 from "../../../../../public/portfolios/calc-marine/BusinessCardDesign.png";
+import calcMarine6 from "../../../../../public/portfolios/calc-marine/FolderDesign.png";
+import calcMarine7 from "../../../../../public/portfolios/calc-marine/AgreementPaperDesign.png";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -67,6 +74,11 @@ export default async function ProjectPage({
 
   const dict = await getDictionary(locale);
   const copy = dict.projects[project.id];
+  const gallery = project.id === "be-oddly"
+    ? [beOddlyBrand, beOddly1, beOddly2, beOddly3, beOddly4, beOddly5, beOddly6]
+    : project.id === "calc-marine"
+      ? [calcMarine1, calcMarine2, calcMarine3, calcMarine4, calcMarine5, calcMarine6, calcMarine7]
+      : null;
   const next = getAdjacentProject(slug);
   const nextCopy = dict.projects[next.id];
 
@@ -107,16 +119,16 @@ export default async function ProjectPage({
         </Reveal>
       </header>
 
-      {project.id === "be-oddly" ? (
+      {gallery ? (
         <div className="container-page pb-16 md:pb-24">
           <dl className="mb-10 grid gap-6 sm:grid-cols-2">
             <MetaItem label={dict.work.labels.client} value={copy.client} />
             <MetaItem label={dict.work.labels.disciplines} value={disciplineNames.join(", ")} />
           </dl>
           <div className="grid items-start gap-4 sm:grid-cols-2 md:gap-6">
-            {[beOddlyBrand, beOddly1, beOddly2, beOddly3, beOddly4, beOddly5, beOddly6].map((photo, index) => (
-              <Reveal key={photo.src} className={index === 6 ? "sm:col-span-2 sm:mx-auto sm:w-1/2" : undefined}>
-                <Image src={photo} alt={`Be Oddly — ${copy.category} (${index + 1})`} sizes="(max-width: 639px) 100vw, 50vw" className="h-auto w-full rounded-[var(--radius)]" />
+            {gallery.map((photo, index) => (
+              <Reveal key={photo.src} className={index === gallery.length - 1 && gallery.length % 2 === 1 ? "sm:col-span-2 sm:mx-auto sm:w-1/2" : undefined}>
+                <Image src={photo} alt={`${copy.client} — ${copy.category} (${index + 1})`} sizes="(max-width: 639px) 100vw, 50vw" className="h-auto w-full rounded-[var(--radius)]" />
               </Reveal>
             ))}
           </div>

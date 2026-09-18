@@ -7,7 +7,7 @@
  */
 export type ProjectId =
   | "be-oddly"
-  | "atlas"
+  | "calc-marine"
   | "vela"
   | "tessera"
   | "halo"
@@ -36,18 +36,18 @@ export const projects: Project[] = [
     id: "be-oddly",
     slug: "be-oddly",
     year: 2026,
-    disciplines: ["branding-campaign", "creative-content"],
+    disciplines: ["social-media"],
     palette: ["#70c4bf", "#efbd4b", "#124f62"],
     mark: "BE",
     featured: true,
   },
   {
-    id: "atlas",
-    slug: "atlas-mobility",
+    id: "calc-marine",
+    slug: "calc-marine",
     year: 2025,
-    disciplines: ["strategy", "identity", "motion"],
-    palette: ["#f52e63", "#fbe2dc", "#1c0a1c"],
-    mark: "AT",
+    disciplines: ["branding-campaign"],
+    palette: ["#2476b8", "#d8e4ee", "#031622"],
+    mark: "CM",
     featured: true,
   },
   {

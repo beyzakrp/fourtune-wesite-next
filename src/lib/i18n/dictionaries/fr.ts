@@ -61,7 +61,7 @@ const fr: Dictionary = {
       "Northwind",
       "Be Oddly",
       "Kestrel",
-      "Atlas Mobility",
+      "Calc Marine",
       "Orbit Health",
       "Veridian",
       "Halo Audio",
@@ -225,12 +225,6 @@ const fr: Dictionary = {
     items: [
 {
         quote:
-          "Le prototype était si proche du build final que nos développeurs s'en sont servis comme spécification. Je n'avais jamais vu ça.",
-        name: "Jonas Weiss",
-        role: "Directeur produit, Atlas Mobility",
-      },
-      {
-        quote:
           "Neuf personnes ont fait ce qu'il fallait quarante à notre agence précédente, et elles décrochaient à chaque appel.",
         name: "Marie Lambert",
         role: "Fondatrice, Field Notes",
@@ -355,32 +349,24 @@ const fr: Dictionary = {
     "be-oddly": {
       "title": "Be Oddly — Un caractère singulier",
       "client": "Be Oddly",
-      "category": "Identité de marque et contenu",
+      "category": "Contenus pour les réseaux sociaux",
       "duration": "",
-      "summary": "Identité de marque et visuels produits pour Be Oddly.",
+      "summary": "Contenus pour les réseaux sociaux de Be Oddly.",
       "challenge": "",
       "approach": "",
       "outcome": "",
       "results": []
     },
-    atlas: {
-      title: "La mobilité, avec un visage",
-      client: "Atlas Mobility",
-      category: "Identité de marque",
-      duration: "6 mois",
-      summary:
-        "Un opérateur de flotte à la logistique excellente et sans aucune personnalité. Nous lui en avons donné une.",
-      challenge:
-        "Atlas déplaçait deux millions de personnes par mois en restant invisible. De la livrée des véhicules au ticket de caisse, tout semblait venir de trois entreprises différentes — parce que c'était le cas.",
-      approach:
-        "Un signe, un système typographique, une signature de motion, du splash de l'application au flanc d'un bus. Nous avons dessiné la signalétique en premier — la contrainte la plus dure — et laissé le reste en hériter.",
-      outcome:
-        "L'identité a été déployée sur 1 400 véhicules et 90 stations en quatorze mois. La mémorisation spontanée a quasiment doublé sur le marché principal.",
-      results: [
-        { value: "×2,1", label: "Mémorisation de marque" },
-        { value: "1 400", label: "Véhicules repensés" },
-        { value: "14 mois", label: "Déploiement complet" },
-      ],
+    "calc-marine": {
+      "title": "Calc Marine — Identité de marque",
+      "client": "Calc Marine",
+      "category": "Identité de marque",
+      "duration": "",
+      "summary": "Création du logo, des cartes de visite, des chemises et des documents professionnels de Calc Marine.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "results": []
     },
     vela: {
       title: "Un commerce qui charge avant le clignement d'œil",

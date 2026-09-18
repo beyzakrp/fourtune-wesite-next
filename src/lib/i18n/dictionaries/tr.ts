@@ -62,7 +62,7 @@ const tr: Dictionary = {
       "Northwind",
       "Be Oddly",
       "Kestrel",
-      "Atlas Mobility",
+      "Calc Marine",
       "Orbit Health",
       "Veridian",
       "Halo Audio",
@@ -233,12 +233,6 @@ const tr: Dictionary = {
     items: [
 {
         quote:
-          "Prototip nihai ürüne o kadar yakındı ki mühendislerimiz onu şartname olarak kullandı. Bunu daha önce hiç görmemiştim.",
-        name: "Jonas Weiss",
-        role: "Ürün Direktörü, Atlas Mobility",
-      },
-      {
-        quote:
           "Önceki ajansımızın kırk kişiyle yaptığını dokuz kişi yaptı ve her aradığımızda telefona çıktılar.",
         name: "Marie Lambert",
         role: "Kurucu, Field Notes",
@@ -367,32 +361,24 @@ const tr: Dictionary = {
     "be-oddly": {
       "title": "Be Oddly — Kendine özgü bir karakter",
       "client": "Be Oddly",
-      "category": "Marka kimliği ve içerik",
+      "category": "Sosyal medya içeriği",
       "duration": "",
-      "summary": "Be Oddly için marka kimliği ve ürün görselleri.",
+      "summary": "Be Oddly için sosyal medya içerikleri.",
       "challenge": "",
       "approach": "",
       "outcome": "",
       "results": []
     },
-    atlas: {
-      title: "Yüzü olan bir ulaşım markası",
-      client: "Atlas Mobility",
-      category: "Marka kimliği",
-      duration: "6 ay",
-      summary:
-        "Lojistiği mükemmel, kişiliği hiç olmayan bir filo işletmecisi. Ona bir kişilik verdik.",
-      challenge:
-        "Atlas ayda iki milyon kişiyi taşıyor ve bunu görünmez şekilde yapıyordu. Araç giydirmesinden bilet fişine kadar her şey üç ayrı şirketten çıkmış gibi duruyordu — çünkü öyleydi.",
-      approach:
-        "Uygulama açılışından otobüsün yan yüzeyine kadar tek bir amblem, tek bir tipografi sistemi, tek bir hareket imzası. Önce yönlendirme tasarımını yaptık — en zor kısıt oydu — ve geri kalan her şeyi ondan türettik.",
-      outcome:
-        "Kimlik on dört ayda 1.400 araç ve 90 istasyona uygulandı. Ana pazarda yardımsız marka hatırlanırlığı yaklaşık ikiye katlandı.",
-      results: [
-        { value: "×2,1", label: "Marka hatırlanırlığı" },
-        { value: "1.400", label: "Yenilenen araç" },
-        { value: "14 ay", label: "Tam uygulama" },
-      ],
+    "calc-marine": {
+      "title": "Calc Marine — Marka kimliği",
+      "client": "Calc Marine",
+      "category": "Marka kimliği",
+      "duration": "",
+      "summary": "Calc Marine için logo, kartvizit, dosya ve kurumsal belge tasarımları.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "results": []
     },
     vela: {
       title: "Göz kırpmadan açılan bir mağaza",

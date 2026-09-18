@@ -61,7 +61,7 @@ const de: Dictionary = {
       "Northwind",
       "Be Oddly",
       "Kestrel",
-      "Atlas Mobility",
+      "Calc Marine",
       "Orbit Health",
       "Veridian",
       "Halo Audio",
@@ -225,12 +225,6 @@ const de: Dictionary = {
     items: [
 {
         quote:
-          "Der Prototyp war dem finalen Build so nah, dass unsere Entwickler ihn als Spezifikation genutzt haben. Das habe ich noch nie erlebt.",
-        name: "Jonas Weiss",
-        role: "Head of Product, Atlas Mobility",
-      },
-      {
-        quote:
           "Neun Leute haben geschafft, wofür unsere vorherige Agentur vierzig brauchte — und sind jedes Mal ans Telefon gegangen.",
         name: "Marie Lambert",
         role: "Gründerin, Field Notes",
@@ -355,32 +349,24 @@ const de: Dictionary = {
     "be-oddly": {
       "title": "Be Oddly — Ein eigener Charakter",
       "client": "Be Oddly",
-      "category": "Markenidentität und Content",
+      "category": "Social-Media-Inhalte",
       "duration": "",
-      "summary": "Markenidentität und Produktvisuals für Be Oddly.",
+      "summary": "Social-Media-Inhalte für Be Oddly.",
       "challenge": "",
       "approach": "",
       "outcome": "",
       "results": []
     },
-    atlas: {
-      title: "Mobilität mit Gesicht",
-      client: "Atlas Mobility",
-      category: "Markenidentität",
-      duration: "6 Monate",
-      summary:
-        "Ein Flottenbetreiber mit exzellenter Logistik und null Persönlichkeit. Wir haben ihm eine gegeben.",
-      challenge:
-        "Atlas bewegte zwei Millionen Menschen im Monat und blieb dabei unsichtbar. Von der Fahrzeuglackierung bis zum Ticketbeleg sah alles nach drei verschiedenen Unternehmen aus — weil es das war.",
-      approach:
-        "Ein Zeichen, ein Schriftsystem, eine Motion-Signatur, vom App-Start bis zur Busflanke. Wir haben zuerst das Leitsystem entworfen — die härteste Randbedingung — und alles andere davon abgeleitet.",
-      outcome:
-        "Die Identität wurde in vierzehn Monaten auf 1.400 Fahrzeuge und 90 Stationen ausgerollt. Die ungestützte Markenerinnerung im Kernmarkt verdoppelte sich nahezu.",
-      results: [
-        { value: "×2,1", label: "Markenerinnerung" },
-        { value: "1.400", label: "Fahrzeuge umgestellt" },
-        { value: "14 Mon.", label: "Kompletter Rollout" },
-      ],
+    "calc-marine": {
+      "title": "Calc Marine — Markenidentität",
+      "client": "Calc Marine",
+      "category": "Markenidentität",
+      "duration": "",
+      "summary": "Logo, Visitenkarten, Mappen und Geschäftsdokumente für Calc Marine.",
+      "challenge": "",
+      "approach": "",
+      "outcome": "",
+      "results": []
     },
     vela: {
       title: "Commerce, der schneller lädt als ein Wimpernschlag",
