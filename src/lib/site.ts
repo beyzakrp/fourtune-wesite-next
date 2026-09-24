@@ -16,7 +16,7 @@ export const site = {
   email: "hello@fourtuneagency.com",
   phone: "+90 540 520 52 01",
   address: {
-    street: " Kolektif House Esentepe Mahallesi Talatpaşa Caddesi No: 5 / 1 Levent 34394 Şişli/İstanbul",
+    street: " İstanbul/TR",
     city: "İstanbul",
     country: "TR",
   },
