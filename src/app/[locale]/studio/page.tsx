@@ -149,7 +149,7 @@ export default async function StudioPage({
 
       <section
         aria-hidden
-        className="flex justify-end bg-white"
+        className="flex justify-end bg-bg"
         style={{
           marginBottom: "calc(0px - var(--page-inset) - 0.75rem)",
           marginTop: "-15rem",
