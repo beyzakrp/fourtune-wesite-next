@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
       permanent: true,
     }];
   },
+  async rewrites() {
+    /* Public download links live under /downloads, while the files themselves
+       sit in /public/prompt-packages. */
+    return [{
+      source: "/downloads/:file*",
+      destination: "/prompt-packages/:file*",
+    }];
+  },
   images: {
     /* Placeholder photography. Every one of these was fetched and decoded
        before being written down, so none of them is a guessed id. Swap the
